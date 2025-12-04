@@ -4,3 +4,10 @@
 
 # VS Code settings
 .vscode
+
+# Docs build
+
+docs/_build
+
+# dot files
+**/.*

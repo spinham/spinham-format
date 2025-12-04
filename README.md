@@ -7,9 +7,8 @@
 ## Workflow
 
 Topical discussions are hosted via [issues](https://github.com/spinham/spinham-format/issues).
-The goal of each discussion is to reach a consensus. If consensus can not be reached, then decision will be made by a vote (1 tool/code = 1 vote). 
 
-Finalised discussion (either via consensus or vote) shall be summarised in the FDF document and a PR request should be opened to the "docs/fdf/" folder of this repository.
+Finalized discussion (either via consensus or vote) shall be summarized in the FDF document.
 
 Any member can open an issue or propose an FDP.
 
