@@ -1,3 +1,5 @@
+name: Deploy Documentation
+
 on:
   pull_request:
     types:
