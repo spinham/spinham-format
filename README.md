@@ -14,7 +14,7 @@ Any member can open an issue or propose an FDP.
 
 ## How to write an FDP
 
-See #9
+See [issue#9](https://github.com/spinham/spinham-format/issues/9)
 
 ## Finalisation of the design stage
 
