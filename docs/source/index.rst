@@ -12,6 +12,12 @@ Spin Hamiltonian format
 **Desired duration**  Two-three months
 ===================== ========================================
 
+.. toctree::
+    :hidden:
+    
+    fdp/index
+    spinham-zoo/index
+
 Workflow
 ========
 
@@ -27,12 +33,6 @@ What is an FDP?
 
 See :ref:`fdp-0` for the description of FDP concept and workflow.
 
-.. toctree::
-    :maxdepth: 1
-
-    fdp/index
-
-
 Finalization of the design stage
 ================================
 
@@ -41,6 +41,4 @@ for the end of the design stage (an open issue in this repository with a
 notification to everyone) can be made by any member and if no new FDP appear
 after XX>7 days after the call, then the work will move to the implementation
 stage.
-
-
 
