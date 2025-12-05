@@ -1,8 +1,8 @@
 .. _zoo_sunny:
 
-*******
-San(n)y
-*******
+*****
+Sunny
+*****
 
 ========= ======================================================================
 ========= ======================================================================
@@ -17,7 +17,16 @@ Spin Hamiltonian
 ================ 
 
 
-TODO
+.. math::
+
+    \mathcal{H}
+    =
+    \sum_{ij}
+    \mathbf{S}_i^T
+    \cdot
+    \mathbf{J}_{ij}
+    \cdot
+    \mathbf{S}_j
 
 
 Convention
@@ -25,7 +34,7 @@ Convention
 
 ================= ======
 ================= ======
-Spin normalized   ?
-Multiple counting ?
+Spin normalized   no
+Multiple counting yes
 ================= ======
 
