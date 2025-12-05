@@ -21,7 +21,7 @@ Spin Hamiltonian
 
     \mathcal{H}
     =
-    \sum_{ij}
+    \sum_{i < j}
     \mathbf{S}_i^T
     \cdot
     \mathbf{J}_{ij}
@@ -35,6 +35,6 @@ Convention
 ================= ======
 ================= ======
 Spin normalized   no
-Multiple counting yes
+Multiple counting no
 ================= ======
 
