@@ -6,7 +6,7 @@ TB2J
 
 ========= ======================================================================
 ========= ======================================================================
-Status    Draft
+Status    Verified
 Links     `Docs <https://tb2j.readthedocs.io/en/latest/>`_,
           `DOI <https://doi.org/10.1016/j.cpc.2021.107938>`_,
           `Github <https://github.com/mailhexu/TB2J>`_
