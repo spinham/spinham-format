@@ -6,7 +6,7 @@ GROGU
 
 ========= ======================================================================
 ========= ======================================================================
-Status    Draft
+Status    Verified
 Links     `Docs <https://grogupy.readthedocs.io/en/stable/>`_,
           `DOI <https://doi.org/10.1103/PhysRevB.108.214418>`_,
           `Zenodo <https://zenodo.org/records/17459345>`_
