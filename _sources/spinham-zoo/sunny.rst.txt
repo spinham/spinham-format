@@ -6,7 +6,7 @@ Sunny
 
 ========= ======================================================================
 ========= ======================================================================
-Status    Draft
+Status    Verified
 Links     `Docs <https://sunnysuite.github.io/Sunny.jl/stable/>`_,
           `DOI <https://doi.org/10.48550/arXiv.2501.13095>`_,
           `Github <https://github.com/SunnySuite/Sunny.jl>`_
