@@ -277,17 +277,39 @@
 </div>
 <section id="spin-hamiltonian">
 <h2>Spin Hamiltonian<a class="headerlink" href="#spin-hamiltonian" title="Link to this heading">¶</a></h2>
+<p>Sunny Hamiltonians will commonly have the format:</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\mathcal{H}
 =
-\sum_{i &lt; j}
-\mathbf{S}_i^T
+\mu_{B}\mathbf{B}
 \cdot
-\mathbf{J}_{ij}
-\cdot
-\mathbf{S}_j\]</div>
+\sum_{i}
+g_{i}\mathbf{S}_{i}
++
+\sum_{i&lt;j}
+\mathbf{S}_{j}
+J_{ij}
+\mathbf{S}_{j}
++
+\sum_{i}\sum_{k,q}
+c_{i,k,q}
+\mathcal{O}_{k,q}
+(\mathbf{S}_{i}).\]</div>
 </div>
+<p>The first term is Zeeman coupling to an external field <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. The
+second term is a local bilinear exchange between dipoles. The third term is a
+single-ion anisotropy, which can be an arbitrary polynomial of spin. For
+example, this may be an arbitrary expansion in the Stevens operators
+<span class="math notranslate nohighlight">\(\mathcal{O}_{k,q}(\mathbf{S})\)</span>. For details, see:
+<a class="reference external" href="https://sunnysuite.github.io/Sunny.jl/stable/renormalization.html">sunnysuite.github.io/Sunny.jl/stable/renormalization.html</a></p>
+<p>Sunny also allows to &quot;toggle on&quot; long-range dipole-dipole interactions
+with Ewald summation and arbitrary demagnetization tensor:
+<a class="reference external" href="https://sunnysuite.github.io/Sunny.jl/stable/library.html#Sunny.enable_dipole_dipole!">sunnysuite.github.io/Sunny.jl/stable/library.html#Sunny.enable_dipole_dipole!</a>
+It also allows for arbitrary coupling between pairs of sites <span class="math notranslate nohighlight">\((i,j)\)</span>
+as higher-order polynomials in <span class="math notranslate nohighlight">\(\mathbf{S}_{i}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{S}_{j}\)</span>
+(e.g., scalar biquadratic, but more general pair couplings too):
+<a class="reference external" href="https://sunnysuite.github.io/Sunny.jl/stable/library.html#Sunny.set_pair_coupling!">sunnysuite.github.io/Sunny.jl/stable/library.html#Sunny.set_pair_coupling!</a></p>
 </section>
 <section id="convention">
 <h2>Convention<a class="headerlink" href="#convention" title="Link to this heading">¶</a></h2>
