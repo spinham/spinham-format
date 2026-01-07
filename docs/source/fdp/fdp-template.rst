@@ -4,12 +4,13 @@
 FDP XX — Template
 *****************
 
-=========== ====================================================
-=========== ====================================================
-**Author**  <Name (e-mail)>
-**Created** <dd.mm.yyyy>
-**Status**  <Draft | Accepted | Rejected | Withdrawn | Replaced>
-=========== ====================================================
+====================== ===============================================================
+====================== ===============================================================
+**Author(s)**          <Name (e-mail), ...>
+(optional) **Manager** <Name (e-mail)>
+**Created**            <dd.mm.yyyy>
+**Status**             <Draft | Deferred | Accepted | Rejected | Withdrawn | Replaced>
+====================== ===============================================================
 
 Abstract
 --------
@@ -39,7 +40,7 @@ Alternatives
 ------------
 
 If there are any alternative solutions or choices that can solve the problem 
-that this FDP addresses, they should be listed here along with the justification
+addressed in this FDP, they should be listed here along with the justification
 for the chosen approach.
 
 References and footnotes
