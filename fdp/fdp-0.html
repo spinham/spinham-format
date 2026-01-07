@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="FDP XX — Template" href="fdp-template.html"><link rel="prev" title="Design principles" href="index.html">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>FDP 0 — How to write an FDP - Spinham format</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     
@@ -275,19 +275,41 @@
 </div>
 <section id="what-is-a-fdp">
 <h2>What is a FDP?<a class="headerlink" href="#what-is-a-fdp" title="Link to this heading">¶</a></h2>
-<p>FDP - &quot;Format's Design Principle&quot; is a design document that describes a design
-principle for the spin Hamiltonian format.</p>
+<p>FDP — &quot;Format's Design Principle&quot; — is a document that describes a design
+principle of the spin Hamiltonian format.</p>
 <p>It is an UTF-8 coded text file written with the <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a> that follows
 the <a class="reference internal" href="fdp-template.html#fdp-template"><span class="std std-ref">FDP XX — Template</span></a>. A plain text file can be proposed as well, in that case
 the Maintainer is responsible for converting it to the <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>.</p>
 </section>
+<section id="header">
+<h2>Header<a class="headerlink" href="#header" title="Link to this heading">¶</a></h2>
+<p>Each FDP should start with a preamble, that shall include the following
+mandatory fields</p>
+<ul class="simple">
+<li><p>Author(s): &lt;list of author's names and optionally e-mail addresses&gt;</p></li>
+<li><p>Created: &lt;date of creation in the format dd.mm.yyyy&gt;</p></li>
+<li><p>Status: &lt;Draft | Deferred | Accepted | Rejected | Withdrawn | Replaced&gt;</p></li>
+</ul>
+<p>And can include optional fields such as</p>
+<ul class="simple">
+<li><p>Manager: &lt;name and e-mail address of the Manager&gt;</p></li>
+</ul>
+</section>
 <section id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">¶</a></h2>
-<p>It is recommended to discuss the idea of FDP in the topical issue before
-proposing the formal FDP document.</p>
-<p>Each FDP proposal should have a responsible person — the Manager — who will
+<p>It is recommended to discuss the idea of FDP in the topical issue or issues
+before proposing the formal FDP document.</p>
+<p>Each FDP proposal should have a responsible person — <em>the Manager</em> — who will
 submit a PR and will be responsible for shepherding the discussion, addressing
 comments, and updating the document as needed.</p>
+<p>If an FDP has a single author, then that author is considered to be the Manager.
+If an FDP has multiple authors, then they should choose a single Manager amongst
+themselves and list that person in the &quot;Manager&quot; field of the FDP header.</p>
+<p>The possible evolution of the FDP status is described below</p>
+<figure class="align-center">
+<a class="reference external image-reference" href="../_images/lifetime.png"><img alt="../_images/lifetime.png" src="../_images/lifetime.png" />
+</a>
+</figure>
 <section id="proposal">
 <h3>Proposal<a class="headerlink" href="#proposal" title="Link to this heading">¶</a></h3>
 <p>When the author(s) feel that the FDP is ready for review, a PR should be
@@ -296,9 +318,9 @@ to the &quot;docs/source/fdp&quot; directory with the name &quot;fdp-&lt;n&gt;.r
 labeled with the &quot;[FDP]&quot; label. At the same time an issue named &quot;FDP &lt;n&gt; -
 &lt;short title&gt; | proposal&quot; should be created for the discussion of the FDP.
 All initial proposals should have the &quot;Draft&quot; status.</p>
-<p>At the earliest convenience the PR should be merged by a maintainer regardless of
-the state of the discussion. New PRs can be created by the Manager to update the
-FDP or by Maintainer to set it status, update format, etc.</p>
+<p>At the earliest convenience the PR should be merged by the Maintainer regardless
+of the state of the discussion. New PRs can be created by the Manager to update
+the FDP or by the Maintainer to set its status, update format, etc.</p>
 </section>
 <section id="discussion-and-review">
 <h3>Discussion and review<a class="headerlink" href="#discussion-and-review" title="Link to this heading">¶</a></h3>
@@ -307,8 +329,13 @@ changes within the topical issue. The Manager is responsible for addressing
 comments, updating the document as needed. The discussion should continue until
 a consensus is reached among the members.</p>
 </section>
-<section id="acceptance">
-<h3>Acceptance<a class="headerlink" href="#acceptance" title="Link to this heading">¶</a></h3>
+<section id="deferred">
+<h3>Deferred<a class="headerlink" href="#deferred" title="Link to this heading">¶</a></h3>
+<p>FDP can be assign the <code class="docutils literal notranslate"><span class="pre">Deferred</span></code> status by the Manager or the Maintainer when
+no progress is made made on the FDP.</p>
+</section>
+<section id="accepted">
+<h3>Accepted<a class="headerlink" href="#accepted" title="Link to this heading">¶</a></h3>
 <p>When the consensus is reached, the Maintainer, at request of the Manager, should
 notify all members stating that the FDP is ready and will be merged unless
 objections are raised within 7 days. If no objections are raised within that
@@ -316,8 +343,8 @@ period, then the FDP becomes <code class="docutils literal notranslate"><span cl
 the Manager, in that case the duration shall be communicated in the
 notification.</p>
 </section>
-<section id="rejection">
-<h3>Rejection<a class="headerlink" href="#rejection" title="Link to this heading">¶</a></h3>
+<section id="rejected">
+<h3>Rejected<a class="headerlink" href="#rejected" title="Link to this heading">¶</a></h3>
 <p>If at any moment the consensus is that the idea of the FDP is not a good one or
 the vote rejects the proposal if the discussion becomes stale, then FDP becomes
 <code class="docutils literal notranslate"><span class="pre">Rejected</span></code>. In that case it is still recorded in the list of FDP's for future
@@ -332,24 +359,14 @@ for future reference.</p>
 <section id="stale-discussion">
 <h3>Stale discussion<a class="headerlink" href="#stale-discussion" title="Link to this heading">¶</a></h3>
 <p>If the consensus can not be reached and the discussion becomes stale,
-then the decision about the FDP shall be made by the vote with the formula
-1 tool = 1 vote. The vote is organized by a Maintainer and can be called by the
-Manager or Maintainer after the discussion becomes stale.</p>
+then the decision about the FDP shall be made by the vote following the formula
+1 tool = 1 vote. The vote is organized by the Maintainer and can be called by
+the Manager or the Maintainer only if the discussion becomes stale.</p>
 </section>
 <section id="replaced">
 <h3>Replaced<a class="headerlink" href="#replaced" title="Link to this heading">¶</a></h3>
 <p>The FDP becomes <code class="docutils literal notranslate"><span class="pre">Replaced</span></code> if a new FDP, that supersedes it, is <code class="docutils literal notranslate"><span class="pre">Accepted</span></code>.</p>
 </section>
-</section>
-<section id="header">
-<h2>Header<a class="headerlink" href="#header" title="Link to this heading">¶</a></h2>
-<p>Each FDP should start with a preamble, that shall include the following
-mandatory fields</p>
-<ul class="simple">
-<li><p>Author: &lt;list of author's names and optionally e-mail addresses&gt;</p></li>
-<li><p>Created: &lt;date of creation in the format dd.mm.yyyy&gt;</p></li>
-<li><p>Status: &lt;Draft | Accepted | Rejected | Withdrawn | Replaced&gt;</p></li>
-</ul>
 </section>
 </section>
 
@@ -410,17 +427,18 @@ mandatory fields</p>
             <ul>
 <li><a class="reference internal" href="#">FDP 0 — How to write an FDP</a><ul>
 <li><a class="reference internal" href="#what-is-a-fdp">What is a FDP?</a></li>
+<li><a class="reference internal" href="#header">Header</a></li>
 <li><a class="reference internal" href="#workflow">Workflow</a><ul>
 <li><a class="reference internal" href="#proposal">Proposal</a></li>
 <li><a class="reference internal" href="#discussion-and-review">Discussion and review</a></li>
-<li><a class="reference internal" href="#acceptance">Acceptance</a></li>
-<li><a class="reference internal" href="#rejection">Rejection</a></li>
+<li><a class="reference internal" href="#deferred">Deferred</a></li>
+<li><a class="reference internal" href="#accepted">Accepted</a></li>
+<li><a class="reference internal" href="#rejected">Rejected</a></li>
 <li><a class="reference internal" href="#withdrawn">Withdrawn</a></li>
 <li><a class="reference internal" href="#stale-discussion">Stale discussion</a></li>
 <li><a class="reference internal" href="#replaced">Replaced</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#header">Header</a></li>
 </ul>
 </li>
 </ul>
@@ -433,8 +451,8 @@ mandatory fields</p>
     </aside>
   </div>
 </div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
