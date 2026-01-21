@@ -4,13 +4,12 @@
 Biquadratic exchange
 ********************
 
-Biquadratic exchange involves two magnetic sites and four "entities" (two per
-site). Therefore, it should map to the term of the Hamiltonian with
+Bilinear exchange involves two magnetic sites and four entities (two entities
+per site). Therefore, it can be expressed via the term :math:`\mathcal{H}_{4, 3}`.
 
 - :math:`k = 4`
 - :math:`l = 3`
-
-Then, :math:`m_{4,3} = 2` and the term have the form
+- :math:`m_{4,3} = 2`
 
 .. math::
 
@@ -24,120 +23,56 @@ Then, :math:`m_{4,3} = 2` and the term have the form
     X_{\mu_2; \alpha_2}^{i_3}
     X_{\mu_2; \alpha_2}^{i_4}
 
-SpinW
------
+The summary of the mapping for each code is given in the table below.
 
-In :ref:`zoo_spinw`, the biquadratic exchange term is written as
+.. list-table::
+    :header-rows: 1
+    :stub-columns: 1
 
-.. math::
-    \mathcal{H}
-    =
-    \sum_{i \neq j}
-    B (\mathbf{S}_i \cdot \mathbf{S}_j)^2
+    *   - Code
+        - :ref:`zoo_spinw`
+        - :ref:`zoo_spirit`
+    *   - :math:`\mathcal{H}`
+        - .. math::
+            \mathcal{H}
+            =
+            \sum_{i \neq j}
+            B (\mathbf{S}_i \cdot \mathbf{S}_j)^2
 
-By renaming the indices as :math:`i \rightarrow (\mu_1, \alpha_1)`,
-:math:`j \rightarrow (\mu_2, \alpha_2)` and expanding the square, 
-one can map this term in the form
-
-.. math::
-
-    \mathcal{H}
-    =
-    \sum_{\substack{\mu_1, \mu_2,\\ \alpha_1, \alpha_2,\\ i_1, i_2, i_3, i_4}}
-    B^{i_1, i_2, i_3, i_4}
-    S_{\mu_1; \alpha_1}^{i_1}
-    S_{\mu_1; \alpha_1}^{i_2}
-    S_{\mu_2; \alpha_2}^{i_3}
-    S_{\mu_2; \alpha_2}^{i_4}
-
-where :math:`i_1, i_2, i_3, i_4 = x, y, z`. Tensor :math:`B^{i_1, i_2, i_3, i_4}`
-is defined as
-
-.. math::
-
-    B &= B^{xxxx} = B^{yyyy} = B^{zzzz} =
-    \\
-    &= B^{xyxy} = B^{xzxz} = B^{yzyz} = 
-    \\
-    &= B^{yxyx} = B^{zxzx} = B^{zyzy}
-
-and all other components of :math:`B^{i_1, i_2, i_3, i_4}` are zero.
+        - .. math::
+            \mathcal{H}_{\rm quad}
+            =
+            - \sum_{ij} K_{ij} (\vec{n}_i \cdot \vec{n}_j)^2
+    *   - Indices renaming
+        - :math:`i \rightarrow (\mu_1, \alpha_1)`, :math:`j \rightarrow (\mu_2, \alpha_2)`
+        - :math:`i \rightarrow (\mu_1, \alpha_1)`, :math:`j \rightarrow (\mu_2, \alpha_2)`
+    *   - :math:`C_{4, 3}`
+        - 1
+        - -1
+    *   - :math:`V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}`
+        - :math:`B` if :math:`(i_1, i_2, i_3, i_4) \in \mathcal{K}` and 0 otherwise.
+        - :math:`K_{\mu_1, \mu_2; \alpha_1, \alpha_2}` if :math:`(i_1, i_2, i_3, i_4) \in \mathcal{K}` and 0 otherwise.
+    *   - :math:`X_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`S_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`n_{\mu_1; \alpha_1}^{i_1}`
+    *   - :math:`X_{\mu_2; \alpha_2}^{i_3}`
+        - :math:`S_{\mu_2; \alpha_2}^{i_3}`
+        - :math:`n_{\mu_2; \alpha_2}^{i_3}`
 
 .. note::
 
-    As :math:`i \ne j`, then :math:`\mathbf{S}_i` and :math:`\mathbf{S}_j` 
-    commute, whether they are operators or vectors. 
+    -   :math:`\mathcal{K} = \{(x,x,x,x), (y,y,y,y), (z,z,z,z), (x,y,x,y), (x,z,x,z), (y,z,y,z), (y,x,y,x), (z,x,z,x), (z,y,z,y)\}`
+    -   :ref:`zoo_spirit`
 
-From here the correspondence is clear
+        Spirit includes more general Hamiltonian that is called "quadruplet interaction"
 
-.. math::
+        .. math::
 
-    C_{4, 3} &= 1
-    \\
-    V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4} &= B^{i_1, i_2, i_3, i_4}
-    \\
-    X_{\mu_1; \alpha_1}^{i_1} &= S_{\mu_1; \alpha_1}^{i_1}
-    \\
-    X_{\mu_2; \alpha_2}^{i_3} &= S_{\mu_2; \alpha_2}^{i_3}
+            \mathcal{H}_{\rm quad}
+            =
+            - \sum_{ijkl} K_{ijkl} (\vec{n}_i \cdot \vec{n}_j)(\vec{n}_k \cdot \vec{n}_l)
 
-Spirit
-------
-
-In :ref:`zoo_spirit`, the quadruplet interaction is written as
-
-.. math::
-    \mathcal{H}_{\rm quad}
-    =
-    - \sum_{ijkl} K_{ijkl} (\vec{n}_i \cdot \vec{n}_j)(\vec{n}_k \cdot \vec{n}_l)
-
-if :math:`i = k` and :math:`j = l` (or, equivalently, :math:`i = l` and
-:math:`j = k`), this interaction describe a biquadratic exchange between sites
-:math:`i` and :math:`j`
-
-.. math::
-    \mathcal{H}_{\rm quad}
-    =
-    - \sum_{ij} K_{ij} (\vec{n}_i \cdot \vec{n}_j)^2
-
-where :math:`K_{ij} \equiv K_{ijij}`. By renaming the indices as
-:math:`i \rightarrow (\mu_1, \alpha_1)`, :math:`j \rightarrow (\mu_2, \alpha_2)` and
-expanding the square, one can write this term in the form
-
-.. math::
-
-    \mathcal{H}_{\rm quad}
-    =
-    - \sum_{\substack{\mu_1, \mu_2,\\ \alpha_1, \alpha_2,\\ i_1, i_2, i_3, i_4}}
-    K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
-    n_{\mu_1; \alpha_1}^{i_1}
-    n_{\mu_1; \alpha_1}^{i_2}
-    n_{\mu_2; \alpha_2}^{i_3}
-    n_{\mu_2; \alpha_2}^{i_4}
-
-where :math:`i_1, i_2, i_3, i_4 = x, y, z`. Tensor
-:math:`K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}` is defined as
-
-.. math::
-
-    K_{ij} &= K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{xxxx} = K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{yyyy} = K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{zzzz} =
-    \\
-    &= K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{xyxy} = K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{xzxz} = K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{yzyz} = 
-    \\
-    &= K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{yxyx} = K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{zxzx} = K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{zyzy}
-
-and all other components of
-:math:`K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}` are zero.
-
-From here the correspondence is clear
-
-.. math::
-
-    C_{4, 3} &= -1
-    \\
-    V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4} &= K_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
-    \\
-    X_{\mu_1; \alpha_1}^{i_1} &= n_{\mu_1; \alpha_1}^{i_1}
-    \\
-    X_{\mu_2; \alpha_2}^{i_3} &= n_{\mu_2; \alpha_2}^{i_3}
-
-
+        in the case :math:`i = k` and :math:`j = l` (or, equivalently,
+        :math:`i = l` and :math:`j = k`) this interaction describe a biquadratic
+        exchange. Other cases are considered in the page 
+        :ref:`mapping_quadruplet`. 

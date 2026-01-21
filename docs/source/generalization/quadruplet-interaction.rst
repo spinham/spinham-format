@@ -21,13 +21,13 @@ Hamiltonian is constant. Therefore, only three cases are possible:
 - :math:`i = k` and :math:`j \ne l` (or equivalently :math:`i = l` and :math:`j \ne k` or :math:`j = k` and :math:`i \ne l` or :math:`j = l` and :math:`i \ne k`)
 
   This is case 1. The Hamiltonian maps to the term of the general Hamiltonian 
-  with :math:`k = 4`, :math:`l = 2` (:math:`m_{4,2} = 3`).
+  with :math:`k = 4`, :math:`l = 4` (:math:`m_{4,4} = 3`).
 
   .. math::
 
-    \mathcal{H}_{4, 2}
+    \mathcal{H}_{4, 4}
     =
-    C_{4, 2}
+    C_{4, 4}
     \sum_{\substack{\mu_1, \mu_2, \mu_3, \\ \alpha_1, \alpha_2, \alpha_3, \\ i_1, i_2, i_3, i_4}}
     V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3, i_4}
     \cdot
@@ -43,13 +43,13 @@ Hamiltonian is constant. Therefore, only three cases are possible:
 - :math:`i \ne k` and :math:`j \ne l` and :math:`i \ne l` and :math:`j \ne k`
 
   This is case 2. The Hamiltonian maps to the term of the general Hamiltonian 
-  with :math:`k = 4`, :math:`l = 1` (:math:`m_{4,1} = 4`).
+  with :math:`k = 4`, :math:`l = 5` (:math:`m_{4,5} = 4`).
 
   .. math::
        
-    \mathcal{H}_{4, 1}
+    \mathcal{H}_{4, 5}
     =
-    C_{4, 1}
+    C_{4, 5}
     \sum_{\substack{\mu_1, \mu_2, \mu_3, \mu_4, \\ \alpha_1, \alpha_2, \alpha_3, \alpha_4, \\ i_1, i_2, i_3, i_4}}
     V_{\mu_1, \mu_2, \mu_3, \mu_4; \alpha_1, \alpha_2, \alpha_3, \alpha_4}^{i_1, i_2, i_3, i_4}
     \cdot
@@ -94,7 +94,7 @@ and all other components are zero. Then one renames the indices as
 
 .. math::
 
-    C_{4, 2} &= -1 \\
+    C_{4, 4} &= -1 \\
     V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3, i_4}
     &\leftrightarrow K_{ijl}^{i_1, i_2, i_3, i_4}
     \\
@@ -136,7 +136,7 @@ and correspondence becomes clear
 
 .. math::
 
-    C_{4, 1} &= -1 \\
+    C_{4, 5} &= -1 \\
     V_{\mu_1, \mu_2, \mu_3, \mu_4; \alpha_1, \alpha_2, \alpha_3, \alpha_4}^{i_1, i_2, i_3, i_4}
     &\leftrightarrow K_{ijkl}^{i_1, i_2, i_3, i_4}
     \\

@@ -8,39 +8,39 @@ Attempt at generalization
 Structure
 =========
 
-First let us describe a real-space structure on which the Hamiltonian is
-defined.
+Any Hamiltonian is defined on a real-space structure (i. e. crystal, lattice,
+molecule, ion, etc.). A natural first step is to formally describe such structure.
 
-Imagine an arbitrary periodic lattice in d-dimensions, defined by the 
-lattice vectors :math:`\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_d`. Let us
-label unit cells of such lattice with the subscript indices :math:`\mu` (or
-:math:`\mu_1`, :math:`\mu_2`, and so on if we need more that one unit cell
-index). In such way, the sum of the form 
+First, imagine an arbitrary periodic lattice in d-dimensions, defined by the
+:math:`d` lattice vectors :math:`\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_d`.
+Label the cells of such lattice with the subscript indices :math:`\mu` (or 
+:math:`\mu_1`, :math:`\mu_2`, and so on if more than one cell index is
+required). In such way, the sum of the form 
 
 .. math::
 
     \sum_{\mu_1, \mu_2} \ldots
 
-indicate that its argument is summed over all unit cell of the lattice twice,
-i. e. :math:`\mu_1` runs over all unit cells of the lattice and for each value
-of :math:`\mu_1`, index :math:`\mu_2` also runs over all unit cells of the
+indicates that its argument is summed over all cells of the lattice twice. In
+other words, index :math:`\mu_1` runs over all cells of the lattice and for each
+value of :math:`\mu_1`, index :math:`\mu_2` also runs over all cells of the
 lattice.
 
-Then, let us assume that there are :math:`N` magnetic sites in each unit cell, 
-which we label with the subscript indices :math:`\alpha` (or :math:`\alpha_1`,
-:math:`\alpha_2`, and so on if we need more that one magnetic site index).
+Second, assume that there are :math:`N` magnetic sites in each cell of the
+lattice. Label each magnetic site in the lattice with an index :math:`\alpha`
+(or :math:`\alpha_1`, :math:`\alpha_2`, and so on if more than one magnetic site
+index is required).
 
-Then the position of the magnetic site in such structure is defined by the 
-radius vector
+With the definitions from above, the position of an arbitrary magnetic site in
+such structure is defined by the radius vector
 
 .. math::
 
     \mathbf{r}_{\mu; \alpha} = \mathbf{r}_{\mu} + \mathbf{r}_{\alpha}
 
-Finally, let us always denote cartesian components (or other component with more
-complex meaning) with the superscript indices :math:`i` (or :math:`i_1`,
-:math:`i_2`, and so on if we need more that one component index). Then the
-formula above can be rewritten as
+Finally, the cartesian components are denoted with the superscript indices
+:math:`i` (or :math:`i_1`, :math:`i_2`, and so on if more than one Cartesian
+component index is required).
 
 .. math::
 
@@ -48,118 +48,146 @@ formula above can be rewritten as
 
 for :math:`i = 1, \ldots, d` (or :math:`i = x, y, z` if :math:`d = 3`).
 
+In the following one shall keep in mind the usual 3D space (:math:`d = 3`).
+
 
 Magnetic sites
 ==============
 
-There is an entity associated with each magnetic site. Let us denote such an
-entity with the letter :math:`X`. The interpretation of the letter :math:`X`
-depends on the term of the Hamiltonian (i. e. it can be a spin vector, spin
-operator, angular momentum operator, Stevens operator, Wybourne operator, etc.). 
-For now, we assume that this entity has :math:`d` cartesian components (or 
-amount of other components with more complex meaning). Therefore, we denote it
+Once the structure is defined, imagine that each magnetic site has an "entity"
+associated with it. Label such an entity with the capital letter :math:`X`. The
+interpretation of the letter :math:`X` depends on the term of the Hamiltonian,
+which it enters. For example, it can be a spin vector, a spin operator, an
+angular momentum operator, a Stevens operator, a Wybourne operator and so on.
 
-.. math::
+Common for all interpretations of the entity :math:`X` are the following properties
 
-    X_{\mu; \alpha}^{i}
+-   Each entity have :math:`n` components.
 
-where index :math:`\mu` indicates the unit cell, index :math:`\alpha` indicates
-magnetic site within the unit cell and index :math:`i` indicates the (cartesian)
-component of the entity.
+    .. math::
 
-One general assumption is made about the entities: if :math:`(\mu_1; \alpha_1) \neq
-(\mu_2; \alpha_2)`, then entities :math:`X_{\mu_1; \alpha_1}^{i_1}` and
-:math:`X_{\mu_2; \alpha_2}^{i_2}` commute. This assumption seems to be fulfilled
-for all possible interpretations of the entity :math:`X`, that we consider.
+        X^{i}
+
+    where :math:`i` runs from :math:`1` to :math:`n`. In the simpliest case those
+    are Cartesian components (:math:`i = x, y, z`). However, in some cases those
+    can have different meaning.
+
+-   Each entity has a well defined position in the real space.
+
+    .. math::
+
+        X_{\mu; \alpha}
+
+    As each entity is associated with a magnetic site, its position is simply
+    the position of that magnetic site.
+
+-   Two entities that are associated with two distinct magnetic sites commute.
+
+    .. math::
+
+        [X_{\mu_1; \alpha_1}^{i_1}, X_{\mu_2; \alpha_2}^{i_2}] = 0
+
+    if :math:`(\mu_1; \alpha_1) \neq (\mu_2; \alpha_2)`.
+
+In the following whether the indices :math:`(\mu_1; \alpha_1)` and
+:math:`(\mu_2; \alpha_2)` are written within the same context it is implied that
+they indicate distinct magnetic sites:
+:math:`(\mu_1; \alpha_1) \neq (\mu_2; \alpha_2)`.
+
 
 Interaction parameters
 ======================
 
-Interaction parameters connect one or more entities. We note an interaction
-parameter as :math:`V`. An interaction parameter has as many component indices
-as the number of entities that it connects. Interaction parameter depend on as
-many unit cell and magnetic site indices as the number of unique sites that it
-connects.
-
-For example, the interaction parameter that connects two entities
-:math:`X_{\mu_1; \alpha_1}^{i_1}` and :math:`X_{\mu_2; \alpha_2}^{i_2}` is
-denoted as
-
-.. math::
-
-    V_{\mu_1, \mu_2; \alpha_1, \alpha_2; \alpha_2}^{i_1, i_2}
-
-and an interaction parameter that connects two entities
-:math:`X_{\mu_1; \alpha_1}^{i_1}` and :math:`X_{\mu_1; \alpha_1}^{i_2}` is
-denoted as
-
-.. math::
-
-    V_{\mu_1; \alpha_1}^{i_1, i_2}
+Then, an interaction between magnetic sites is described by the interaction
+parameters. Label such an interaction parameter with the capital letter
+:math:`V`. Each interaction parameter connects one or more entities, whilst
+those entities are associates with one or more magnetic sites. As with entities,
+the interpretation of the interaction parameter :math:`V` depends on the term of
+the Hamiltonian, which it enters. However, there are two common properties
 
 
-.. note::
-
-    Due to the translational invariance of the underlying lattice, the 
-    interaction parameter would actually depend on :math:`\mu_2 - \mu_1` in the 
-    first example and would not depend on :math:`\mu_1` in the second example.
-
-    Formally, this symmetry can be encoded by defining the relative unit cell index
-    as :math:`\nu_i = \mu_i - \mu_1` and updating the notation as
+-   Each interaction parameter has as many independent dimensions as the number of
+    components of the entities that it connects. For example, an interaction
+    parameter
 
     .. math::
 
-        \sum_{\mu_1, \mu_2}
-        &\rightarrow
-        \sum_{\mu_1, \nu_2}
-        \\
-        X_{\mu_1; \alpha_1}^{i_1}
-        &\rightarrow
-        X_{\mu_1; \alpha_1}^{i_1}
-        \\
-        X_{\mu_2; \alpha_2}^{i_2}
-        &\rightarrow
-        X_{\mu_1 + \nu_2; \alpha_2}^{i_2}
-        \\
-        V_{\mu_1, \mu_2; \alpha_1, \alpha_2; \alpha_2}^{i_1, i_2}
-        &\rightarrow
-        V_{\nu_2; \alpha_1, \alpha_2}^{i_1, i_2}
-        \\
-        V_{\mu_1; \alpha_1}^{i_1, i_2}
-        &\rightarrow
-        V_{\alpha_1}^{i_1, i_2}
+        V^{i_1, i_2, \ldots, i_k}
 
-    However, for the sake of clarity we would not do that here.
+    connects :math:`k` entities.
+
+-   Each interaction parameter depends on as many pairs of position indices
+    (cell index and magnetic site index) as the number of unique magnetic sites
+    that it connects. For example, an interaction parameter
+
+    .. math::
+
+        V_{\mu_1, \mu_2, \ldots, \mu_m; \alpha_1, \alpha_2, \ldots, \alpha_m}
+
+    connects :math:`m` unique magnetic sites.
+
+.. note::
+
+    Amount of entities and the amount of unique magnetic sites can be different.
+    For example, an interaction parameter can connect two entities
+    :math:`X_{\mu_1; \alpha_1}^{i_1}` and :math:`X_{\mu_1; \alpha_1}^{i_2}` is
+    denoted as
+
+    .. math::
+
+        V_{\mu_1; \alpha_1}^{i_1, i_2}
+
+    While an interaction parameter that connects two entities
+    :math:`X_{\mu_1; \alpha_1}^{i_1}` and :math:`X_{\mu_2; \alpha_2}^{i_2}` is
+    denoted as  
+
+    .. math::
+
+        V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2}
 
 Terms of the Hamiltonian
 ========================
 
-To systematize the terms of the Hamiltonian, one can map them to a 
-2D-grid, where first axis indicates the number of different magnetic sites that
-are involved in the term (:math:`n_{sites} \equiv m`), and the second axis
-indicates the number of entities that are multiplied together in the term
-(:math:`n_{entities} \equiv k`).
+The Hamiltonian itself is constructed with the following properties in mind
 
-Before drawing such a table, let us deduce a couple of simplification rules.
+- Terms of the Hamiltonian can involve an arbitrary amount of entities.
+- Terms of the Hamiltonian can involve an arbitrary amount of unique magnetic
+  sites.
+- Each combination of components of the entities can have a unique
+  interaction parameter associated with it.
 
-- :math:`n_{entities}` cannot be bigger than :math:`n_{sites}`.
 
-  As every entity is associated with a magnetic site.
+Consider an arbitrary term of the Hamiltonian. Let it involve :math:`m` distinct
+magnetic sites
 
-- :math:`n_{entities} = 0` is not considered in the Hamiltonian. 
+.. math::
 
-  Part of the Hamiltonian that does not depend on the entities do not describe
-  the physical effect that is encoded in the entities. In other words, it is a
-  constant energy term, that can be ignored.
+    (\mu_1; \alpha_1), (\mu_2; \alpha_2), \ldots, (\mu_m; \alpha_m)
 
-- :math:`n_{sites} = 0` is not considered in the Hamiltonian.
+and :math:`k` entities. Then the interaction parameter for such term is denoted
+as
 
-  The term that does not involve any magnetic sites do not describe the physical
-  system that we consider. In other words, it is a constant energy term, that
-  can be ignored.
+.. math::
 
-With those rules in mind one can sketch the table, without any terms filled in
-(cross means that the term is not possible/considered)
+    V_{\mu_1, \ldots, \mu_m; \alpha_1, \ldots, \alpha_m}^{i_1, \ldots, i_k}
+
+Now, the first question is - What are the restrictions on the values of :math:`k`
+and :math:`m`? The answer is 
+
+-   :math:`k \ge m`.
+
+    As every entity is associated with exactly one magnetic site.
+
+-   :math:`k \ne 0` and :math:`m \ne 0`. 
+
+    If the Hamiltonian includes a term that is independent of the entities or 
+    does not involve any magnetic sites, then such a term either describes the
+    environment and not the system or is a constant energy term that can be
+    ignored.
+
+With those rules in mind one can sketch a table (cross means that the term is
+not possible/considered) for one possible classification of the Hamiltonian's
+terms.
 
 
 .. list-table:: 
@@ -167,85 +195,336 @@ With those rules in mind one can sketch the table, without any terms filled in
     :stub-columns: 1
 
     * - 
-      - :math:`n_{sites} = 0`
-      - :math:`n_{sites} = 1`
-      - :math:`n_{sites} = 2`
-      - :math:`n_{sites} = 3`
-      - :math:`n_{sites} = 4`
+      - :math:`m = 1`
+      - :math:`m = 2`
+      - :math:`m = 3`
+      - :math:`m = 4`
       - :math:`\ldots`
-    * - :math:`n_{entities} = 0`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-    * - :math:`n_{entities} = 1`
-      - :math:`\times`
+    * - :math:`k = 1`
       - 
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
-    * - :math:`n_{entities} = 2`
-      - :math:`\times`
+    * - :math:`k = 2`
       - 
       - 
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
-    * - :math:`n_{entities} = 3`
-      - :math:`\times`
+    * - :math:`k = 3`
       - 
       -
       - 
       - :math:`\times`
       - :math:`\times`
-    * - :math:`n_{entities} = 4`
-      - :math:`\times`
+    * - :math:`k = 4`
       - 
       -
       - 
       - 
       - :math:`\times`
     * - :math:`\ldots`
+      - 
+      - 
+      - 
+      - 
+      - 
+
+Unfortunately, one can not simply classify the terms of the Hamiltonian by the
+pair :math:`(k, m)`. First counter-example occurs when :math:`k = 4`. Imagine 
+two terms that both involve :math:`k = 4` entities and :math:`m = 2` magnetic 
+sites 
+
+.. math::
+
+    V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+    X_{\mu_1; \alpha_1}^{i_1}
+    X_{\mu_1; \alpha_1}^{i_2}
+    X_{\mu_2; \alpha_2}^{i_3}
+    X_{\mu_2; \alpha_2}^{i_4}
+    \qquad
+    \text{and}
+    \qquad
+    V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+    X_{\mu_1; \alpha_1}^{i_1}
+    X_{\mu_1; \alpha_1}^{i_2}
+    X_{\mu_1; \alpha_1}^{i_3}
+    X_{\mu_2; \alpha_2}^{i_4}
+
+Those two terms are distinct and can not be express one through another.
+Therefore, the label :math:`(k, m)` is not sufficient to uniquely identify a
+term of the Hamiltonian.
+
+.. hint::
+
+    On the other, hand the terms 
+
+    .. math::
+
+        &V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+        X_{\mu_1; \alpha_1}^{i_1}
+        X_{\mu_1; \alpha_1}^{i_2}
+        X_{\mu_1; \alpha_1}^{i_3}
+        X_{\mu_2; \alpha_2}^{i_4}
+        \\
+
+        &V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+        X_{\mu_1; \alpha_1}^{i_1}
+        X_{\mu_1; \alpha_1}^{i_2}
+        X_{\mu_2; \alpha_2}^{i_3}
+        X_{\mu_1; \alpha_1}^{i_4}
+        \\
+
+        &V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+        X_{\mu_1; \alpha_1}^{i_1}
+        X_{\mu_2; \alpha_2}^{i_2}
+        X_{\mu_1; \alpha_1}^{i_3}
+        X_{\mu_1; \alpha_1}^{i_4}
+        \\
+
+        &V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+        X_{\mu_2; \alpha_2}^{i_1}
+        X_{\mu_1; \alpha_1}^{i_2}
+        X_{\mu_1; \alpha_1}^{i_3}
+        X_{\mu_1; \alpha_1}^{i_4}
+        \\
+
+    are equivalent, as two entities associated with two distinct sites commute
+    (therefore, all of those four terms can be expressed through the first one
+    by re-ordering of the entities and renaming of the indices).
+
+Now the questions are 
+
+- How many distinct terms of the Hamiltonian exist for each :math:`k`?
+- How those can be labeled?
+
+To answer those, define a set of numbers :math:`\{n_1, n_2, \ldots, n_m\}`,
+where each number :math:`n_j` indicates how many entities are associated with
+the site :math:`(\mu_j; \alpha_j)`. As the total amount of entities is :math:`k`,
+one gets
+
+.. math::
+
+    \sum_j n_j = k
+
+Then, the first question can be re-formulated as 
+
+- How many integer partitions of an integer :math:`k` exist (see
+  |Integer-partition|_)?
+
+The answer is a partition function, that is labeled as :math:`p(k)`. Here are
+its values for a few first values of :math:`k`
+
+
+.. list-table:: 
+    :header-rows: 0
+    :stub-columns: 1
+
+    * - :math:`k`
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - :math:`\ldots`
+    * - :math:`p(k)`
+      - 1
+      - 2
+      - 3
+      - 5
+      - 7
+      - 11
+      - :math:`\ldots`
+
+Therefore, the terms of the Hamiltonian can be uniquely labeled by a pair
+:math:`(k, l)`, where :math:`k` is the amount of entities and :math:`l` is 
+an index of a particular integer partition of the number :math:`k` (with
+:math:`l = 1, \ldots, p(k)`). For each such pair define a number :math:`m_{k,l}`,
+which indicates how many unique magnetic sites are involved in the term 
+:math:`(k, l)`.
+
+.. hint::
+
+    To be exact, pick the ordering on the partitions of an integer :math:`k` to
+    be an descending order of sets of integers that specified a partition, while
+    each set is ordered in a descending order. Here is an example of such
+    ordering
+
+
+
+    -   :math:`k = 1`
+
+        ========= =========
+        Partition :math:`l`
+        ========= =========
+        1         1
+        ========= =========
+
+    -   :math:`k = 2`
+
+        ========= =========
+        Partition :math:`l`
+        ========= =========
+        2         1
+        1 + 1     2
+        ========= =========
+
+    -   :math:`k = 3`
+
+        ========= =========
+        Partition :math:`l`
+        ========= =========
+        3         1
+        2 + 1     2
+        1 + 1 + 1 3
+        ========= =========
+
+    -   :math:`k = 4`        
+
+        ============= ========= 
+        Partition     :math:`l`
+        ============= =========
+        4             1
+        3 + 1         2
+        2 + 2         3
+        2 + 1 + 1     4
+        1 + 1 + 1 + 1 5
+        ============= =========
+
+Redesign a classification table by using the labels :math:`(k, l)` 
+(instead of :math:`(k, m)`). As entries of the table put the amount of distinct
+magnetic sites :math:`m_{k,l}` that are involved in the term.
+
+
+.. list-table:: 
+    :header-rows: 1
+    :stub-columns: 1
+
+    * - 
+      - :math:`l = 1`
+      - :math:`l = 2`
+      - :math:`l = 3`
+      - :math:`l = 4`
+      - :math:`l = 5`
+      - :math:`\ldots`
+    * - :math:`k = 1`
+      - 1
       - :math:`\times`
-      - 
-      - 
-      - 
-      - 
-      - 
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`k = 2`
+      - 1
+      - 2
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`k = 3`
+      - 1
+      - 2
+      - 3 
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`k = 4`
+      - 1
+      - 2
+      - 2
+      - 3
+      - 4
+      - :math:`\times`
+    * - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
 
-The table will be filled later, first let us sketch the generic term of the
-Hamiltonian.
+or the repetition numbers :math:`\{n_{l, 1}, \ldots, n_{l, m_{k,l}}\}`
 
-General term of the Hamiltonian
-===============================
 
-Now everything is ready to sketch the generic term of the Hamiltonian. 
+.. list-table:: 
+    :header-rows: 1
+    :stub-columns: 1
 
-Let the term involve :math:`n_{sites} \equiv m` different magnetic sites
+    * - 
+      - :math:`l = 1`
+      - :math:`l = 2`
+      - :math:`l = 3`
+      - :math:`l = 4`
+      - :math:`l = 5`
+      - :math:`\ldots`
+    * - :math:`k = 1`
+      - 1
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`k = 2`
+      - 2
+      - 1, 1
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`k = 3`
+      - 3
+      - 2, 1
+      - 1, 1, 1 
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`k = 4`
+      - 4
+      - 3, 1
+      - 2, 2
+      - 2, 1, 1
+      - 1, 1, 1, 1
+      - :math:`\times`
+    * - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+
+
+The Hamiltonian
+===============
+
+Finally, everything is ready to write the Hamiltonian.
+
+The Hamiltonian is a sum over :math:`k` and over :math:`l` 
 
 .. math::
 
-    (\mu_1; \alpha_1), (\mu_2; \alpha_2), \ldots, (\mu_m; \alpha_m)
+    \mathcal{H}
+    =
+    \sum_{k=1}^{\infty}
+    \sum_{l=1}^{p(k)}
+    \mathcal{H}_{k, l}
 
-and :math:`n_{entities} \equiv k` entities (:math:`k \geq m`). Then the
-interaction parameter that connects those entities is
+Before introducing the general form of :math:`\mathcal{H}_{k, l}`, consider a
+few examples. 
 
-.. math::
+.. hint::
+    The constants of the form :math:`C_{k, l}` are introduced to account for
+    different conventions (see :issue:`2`).
 
-    V_{\mu_1, \ldots, \mu_m; \alpha_1, \ldots, \alpha_m}^{i_1, \ldots, i_k}
-
-Before we introduce the general form of the Hamiltonian, let us give a few
-examples for different values of :math:`k`.
 
 k = 1
 -----
 
-There is one case.
+One case is possible.
 
--   :math:`m = 1`, the term can be written as
+-   :math:`l = 1`: :math:`m_{1,1} = 1`, :math:`n_1 = 1`
 
     .. math::
         
@@ -257,36 +536,19 @@ There is one case.
         \cdot
         X_{\mu_1; \alpha_1}^{i_1}
 
-The constant :math:`C_{1, 1}` accounts for different conventions (see
-:issue:`2`).
-
 
 k = 2
 -----
 
-There are two cases.
+Two cases are possible.
 
--   :math:`m = 2`: :math:`n_1 = 1`, :math:`n_2 = 1`
-
-    .. math::
-       
-        \mathcal{H}_{2, 1}
-        =
-        C_{2, 1}
-        \sum_{\substack{\mu_1, \mu_2, \\ \alpha_1, \alpha_2, \\ i_1, i_2}}
-        V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2}
-        \cdot
-        X_{\mu_1; \alpha_1}^{i_1}
-        \cdot
-        X_{\mu_2; \alpha_2}^{i_2}
-
--   :math:`m = 1`: :math:`n_1 = 2`
+-   :math:`l = 1`: :math:`m_{2,1} = 1`, :math:`n_1 = 2`
 
     .. math::
          
-        \mathcal{H}_{2, 2}
+        \mathcal{H}_{2, 1}
         =
-        C_{2, 2}
+        C_{2, 1}
         \sum_{\substack{\mu_1, \\ \alpha_1, \\ i_1, i_2}}
         V_{\mu_1; \alpha_1}^{i_1, i_2}
         \cdot
@@ -294,28 +556,43 @@ There are two cases.
         \cdot
         X_{\mu_1; \alpha_1}^{i_2}
 
-k = 3
------
-
-There are three cases.
-
--   :math:`m = 3`: :math:`n_1 = 1`, :math:`n_2 = 1`, :math:`n_3 = 1`
+-   :math:`l = 2`: :math:`m_{2,2} = 2`, :math:`n_1 = 1`, :math:`n_2 = 1`
 
     .. math::
        
-        \mathcal{H}_{3, 1}
+        \mathcal{H}_{2, 2}
         =
-        C_{3, 1}
-        \sum_{\substack{\mu_1, \mu_2, \mu_3, \\ \alpha_1, \alpha_2, \alpha_3, \\ i_1, i_2, i_3}}
-        V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3}
+        C_{2, 2}
+        \sum_{\substack{\mu_1, \mu_2, \\ \alpha_1, \alpha_2, \\ i_1, i_2}}
+        V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2}
         \cdot
         X_{\mu_1; \alpha_1}^{i_1}
         \cdot
         X_{\mu_2; \alpha_2}^{i_2}
-        \cdot
-        X_{\mu_3; \alpha_3}^{i_3}
 
--   :math:`m = 2`: :math:`n_1 = 2`, :math:`n_2 = 1` (or :math:`n_1 = 1`, :math:`n_2 = 2`)
+k = 3
+-----
+
+Three cases are possible.
+
+-   :math:`l = 1`: :math:`m_{3,1} = 1`, :math:`n_1 = 3`
+
+
+    .. math::
+         
+        \mathcal{H}_{3, 1}
+        =
+        C_{3, 1}
+        \sum_{\substack{\mu_1, \\ \alpha_1, \\ i_1, i_2, i_3}}
+        V_{\mu_1; \alpha_1}^{i_1, i_2, i_3}
+        \cdot
+        X_{\mu_1; \alpha_1}^{i_1}
+        \cdot
+        X_{\mu_1; \alpha_1}^{i_2}
+        \cdot
+        X_{\mu_1; \alpha_1}^{i_3}  
+
+-   :math:`l = 2`: :math:`m_{3,2} = 2`, :math:`n_1 = 2`, :math:`n_2 = 1`
 
     .. math::
     
@@ -331,66 +608,65 @@ There are three cases.
         \cdot
         X_{\mu_2; \alpha_2}^{i_3}
 
--   :math:`m = 1`: :math:`n_1 = 3`
-
-
-    .. math::
-         
-        \mathcal{H}_{3, 3}
-        =
-        C_{3, 3}
-        \sum_{\substack{\mu_1, \\ \alpha_1, \\ i_1, i_2, i_3}}
-        V_{\mu_1; \alpha_1}^{i_1, i_2, i_3}
-        \cdot
-        X_{\mu_1; \alpha_1}^{i_1}
-        \cdot
-        X_{\mu_1; \alpha_1}^{i_2}
-        \cdot
-        X_{\mu_1; \alpha_1}^{i_3}  
-
-
-k = 4
------
-
-There are five (not four!) cases.
-
--   :math:`m = 4`: :math:`n_1 = 1`, :math:`n_2 = 1`, :math:`n_3 = 1`, :math:`n_4 = 1`
+-   :math:`l = 3`: :math:`m_{3,3} = 3`, :math:`n_1 = 1`, :math:`n_2 = 1`, :math:`n_3 = 1`
 
     .. math::
        
-        \mathcal{H}_{4, 1}
+        \mathcal{H}_{3, 3}
         =
-        C_{4, 1}
-        \sum_{\substack{\mu_1, \mu_2, \mu_3, \mu_4, \\ \alpha_1, \alpha_2, \alpha_3, \alpha_4, \\ i_1, i_2, i_3, i_4}}
-        V_{\mu_1, \mu_2, \mu_3, \mu_4; \alpha_1, \alpha_2, \alpha_3, \alpha_4}^{i_1, i_2, i_3, i_4}
+        C_{3, 3}
+        \sum_{\substack{\mu_1, \mu_2, \mu_3, \\ \alpha_1, \alpha_2, \alpha_3, \\ i_1, i_2, i_3}}
+        V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3}
         \cdot
         X_{\mu_1; \alpha_1}^{i_1}
         \cdot
         X_{\mu_2; \alpha_2}^{i_2}
         \cdot
         X_{\mu_3; \alpha_3}^{i_3}
-        \cdot
-        X_{\mu_4; \alpha_4}^{i_4}
 
--   :math:`m = 3`: :math:`n_1 = 2`, :math:`n_2 = 1`, :math:`n_3 = 1` (and permutations)
+
+k = 4
+-----
+
+Five cases are possible.
+
+-   :math:`l = 1`: :math:`m_{4,1} = 1`, :math:`n_1 = 4`
 
     .. math::
-    
-        \mathcal{H}_{4, 2}
+         
+        \mathcal{H}_{4, 1}
         =
-        C_{4, 2}
-        \sum_{\substack{\mu_1, \mu_2, \mu_3, \\ \alpha_1, \alpha_2, \alpha_3, \\ i_1, i_2, i_3, i_4}}
-        V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3, i_4}
+        C_{4, 1}
+        \sum_{\substack{\mu_1, \\ \alpha_1, \\ i_1, i_2, i_3, i_4}}
+        V_{\mu_1; \alpha_1}^{i_1, i_2, i_3, i_4}
         \cdot
         X_{\mu_1; \alpha_1}^{i_1}
         \cdot
         X_{\mu_1; \alpha_1}^{i_2}
         \cdot
-        X_{\mu_2; \alpha_2}^{i_3}
+        X_{\mu_1; \alpha_1}^{i_3}
         \cdot
-        X_{\mu_3; \alpha_3}^{i_4}
+        X_{\mu_1; \alpha_1}^{i_4}
 
--   :math:`m = 2`: :math:`n_1 = 2`, :math:`n_2 = 2`
+-   :math:`l = 2`: :math:`m_{4,2} = 2`, :math:`n_1 = 3`, :math:`n_2 = 1`
+
+    .. math::
+         
+        \mathcal{H}_{4, 2}
+        =
+        C_{4, 2}
+        \sum_{\substack{\mu_1, \mu_2, \\ \alpha_1, \alpha_2, \\ i_1, i_2, i_3, i_4}}
+        V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+        \cdot
+        X_{\mu_1; \alpha_1}^{i_1}
+        \cdot
+        X_{\mu_1; \alpha_1}^{i_2}
+        \cdot
+        X_{\mu_1; \alpha_1}^{i_3}
+        \cdot
+        X_{\mu_2; \alpha_2}^{i_4}
+
+-   :math:`l = 3`: :math:`m_{4,3} = 2`, :math:`n_1 = 2`, :math:`n_2 = 2`
 
     .. math::
          
@@ -408,79 +684,52 @@ There are five (not four!) cases.
         \cdot
         X_{\mu_2; \alpha_2}^{i_4}
 
--   :math:`m = 2`: :math:`n_1 = 3`, :math:`n_2 = 1` (and permutations)
+-   :math:`l = 4`: :math:`m_{4,4} = 3`, :math:`n_1 = 2`, :math:`n_2 = 1`, :math:`n_3 = 1`
 
     .. math::
-         
+    
         \mathcal{H}_{4, 4}
         =
         C_{4, 4}
-        \sum_{\substack{\mu_1, \mu_2, \\ \alpha_1, \alpha_2, \\ i_1, i_2, i_3, i_4}}
-        V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
+        \sum_{\substack{\mu_1, \mu_2, \mu_3, \\ \alpha_1, \alpha_2, \alpha_3, \\ i_1, i_2, i_3, i_4}}
+        V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3, i_4}
         \cdot
         X_{\mu_1; \alpha_1}^{i_1}
         \cdot
         X_{\mu_1; \alpha_1}^{i_2}
         \cdot
-        X_{\mu_1; \alpha_1}^{i_3}
+        X_{\mu_2; \alpha_2}^{i_3}
         \cdot
-        X_{\mu_2; \alpha_2}^{i_4}
+        X_{\mu_3; \alpha_3}^{i_4}
 
--   :math:`m = 1`: :math:`n_1 = 4`
+-   :math:`l = 5`: :math:`m_{4,5} = 4`, :math:`n_1 = 1`, :math:`n_2 = 1`, :math:`n_3 = 1`, :math:`n_4 = 1`
 
     .. math::
-         
+       
         \mathcal{H}_{4, 5}
         =
         C_{4, 5}
-        \sum_{\substack{\mu_1, \\ \alpha_1, \\ i_1, i_2, i_3, i_4}}
-        V_{\mu_1; \alpha_1}^{i_1, i_2, i_3, i_4}
+        \sum_{\substack{\mu_1, \mu_2, \mu_3, \mu_4, \\ \alpha_1, \alpha_2, \alpha_3, \alpha_4, \\ i_1, i_2, i_3, i_4}}
+        V_{\mu_1, \mu_2, \mu_3, \mu_4; \alpha_1, \alpha_2, \alpha_3, \alpha_4}^{i_1, i_2, i_3, i_4}
         \cdot
         X_{\mu_1; \alpha_1}^{i_1}
         \cdot
-        X_{\mu_1; \alpha_1}^{i_2}
+        X_{\mu_2; \alpha_2}^{i_2}
         \cdot
-        X_{\mu_1; \alpha_1}^{i_3}
+        X_{\mu_3; \alpha_3}^{i_3}
         \cdot
-        X_{\mu_1; \alpha_1}^{i_4}
+        X_{\mu_4; \alpha_4}^{i_4}
 
-General case
-------------
+Arbitrary k
+-----------
 
-
-As one can see, the number of cases behaves as a
-number of integer partitions of :math:`k` (see |Integer-partition|_), which we
-denote as :math:`p(k)`. This fact can be explained as follows.
-
-The number of entities :math:`k` have to be larger or equal than the number of
-sites :math:`m`. Let us define a set of numbers :math:`\{n_1, n_2, \ldots, n_m\}`,
-where each number :math:`n_j` indicates how many entities are associated with
-site :math:`(\mu_j; \alpha_j)`. Then the following conditions have to be fulfilled
+Generalizing the examples above, one can write the general form of
+:math:`\mathcal{H}_{k, l}` as
 
 .. math::
 
-    \sum_j n_j = k
-
-integer partition function counts the amount of sets
-:math:`\{n_1, n_2, \ldots, n_m\}` that satisfy the condition above.
-
-
-
-Therefore, in the general form the pre-factors can be
-written as
-
-.. math::
-
-    C_{k, l}
-    
-where  :math:`l = 1, \ldots, p(k)`. Finally, the Hamiltonian can be written as
-
-.. math::
-
-    \mathcal{H}
+    \mathcal{H}_{k, l}
     =
-    \sum_{k=1}^{\infty}
-    \sum_{l=1}^{p(k)}
     C_{k, l}
     \sum_{\substack{\mu_1, \ldots, \mu_{m_{k,l}}, \\ \alpha_1, \ldots, \alpha_{m_{k,l}}, \\ i_1, \ldots, i_k}}
     V_{\mu_1, \ldots, \mu_{m_{k,l}}; \alpha_1, \ldots, \alpha_{m_{k,l}}}^{i_1, \ldots, i_k}
@@ -512,26 +761,32 @@ the number :math:`k`.
 Mapping to the general form
 ===========================
 
-Finally, lets consider the terms of the Hamiltonian that are present in the
+Now, consider the terms of the Hamiltonian that are present in the
 :ref:`"zoo" <zoo>` and map each one of them to the general form above.
+
+The pages below discuss the mapping of each term in detail.
 
 .. toctree::
     :maxdepth: 1
 
-    zeeman
+    bilinear-exchange
+    biquadratic-exchange
+    crystal-field
+    dipole-dipole
+    exchange-striction
     on-site-k2
     on-site-k4
-    on-site-k
-    dipole-dipole
-    bilinear-exchange
-    exchange-striction
-    biquadratic-exchange
     quadruplet-interaction
-    crystal-field
     two-ion-crystal-field
+    zeeman
 
-After those exercises in mapping one can fill the table by placing the type of
-interactions in it
+.. toctree::
+    :maxdepth: 1
+
+    on-site-k
+
+The terms of the Hamiltonian, that are discussed above, can be classified as
+follows
 
 
 .. list-table:: 
@@ -539,122 +794,122 @@ interactions in it
     :stub-columns: 1
 
     * - 
-      - :math:`n_{sites} = 0`
-      - :math:`n_{sites} = 1`
-      - :math:`n_{sites} = 2`
-      - :math:`n_{sites} = 3`
-      - :math:`n_{sites} = 4`
+      - :math:`l = 1`
+      - :math:`l = 2`
+      - :math:`l = 3`
+      - :math:`l = 4`
+      - :math:`l = 5`
       - :math:`\ldots`
-    * - :math:`n_{entities} = 0`
+    * - :math:`k = 1`
+      - :ref:`mapping_crystal-field`,
+        :ref:`mapping_crystal-field_ambiguity`,
+        :ref:`mapping_zeeman`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
-      - :math:`\times`
-    * - :math:`n_{entities} = 1`
-      - :math:`\times`
-      - :ref:`mapping_zeeman`, :ref:`mapping_on-site-k`, :ref:`mapping_crystal-field`, :ref:`mapping_crystal-field_ambiguity`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-    * - :math:`n_{entities} = 2`
-      - :math:`\times`
-      - :ref:`mapping_on-site-k2`, :ref:`mapping_on-site-k`, :ref:`mapping_crystal-field_ambiguity`
-      - :ref:`mapping_bilinear-exchange`, :ref:`mapping_dipole-dipole`, :ref:`mapping_exchange_striction`, :ref:`mapping_two-ion-crystal-field`, :ref:`mapping_two-ion-crystal-field_ambiguity`
+    * - :math:`k = 2`
+      - :ref:`mapping_crystal-field_ambiguity`, 
+        :ref:`mapping_on-site-k2`
+      - :ref:`mapping_bilinear-exchange`, 
+        :ref:`mapping_dipole-dipole`,  
+        :ref:`mapping_exchange_striction`, 
+        :ref:`mapping_two-ion-crystal-field`, 
+        :ref:`mapping_two-ion-crystal-field_ambiguity`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
-    * - :math:`n_{entities} = 3`
       - :math:`\times`
-      - :ref:`mapping_on-site-k`, :ref:`mapping_crystal-field_ambiguity`
+    * - :math:`k = 3`
+      - :ref:`mapping_crystal-field_ambiguity`
       - :ref:`mapping_two-ion-crystal-field_ambiguity`
-      - 
+      - 3 
       - :math:`\times`
       - :math:`\times`
-    * - :math:`n_{entities} = 4`
       - :math:`\times`
-      - :ref:`mapping_on-site-k4`, :ref:`mapping_on-site-k`, :ref:`mapping_crystal-field_ambiguity`
-      - :ref:`mapping_biquadratic-exchange`, :ref:`mapping_two-ion-crystal-field_ambiguity`
+    * - :math:`k = 4`
+      - :ref:`mapping_crystal-field_ambiguity`, 
+        :ref:`mapping_on-site-k4`
+      - :ref:`mapping_two-ion-crystal-field_ambiguity`
+      - :ref:`mapping_biquadratic-exchange`
       - :ref:`mapping_quadruplet-case-1`
       - :ref:`mapping_quadruplet-case-2`
       - :math:`\times`
     * - :math:`\ldots`
-      - :math:`\times`
-      - :ref:`mapping_on-site-k`, :ref:`mapping_crystal-field_ambiguity`
+      - :ref:`mapping_crystal-field_ambiguity`
       - :ref:`mapping_two-ion-crystal-field_ambiguity`
-      - 
-      -
-      -
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
 
-
-or by placing the code names in the cells where the code has some term
-implemented (:math:`^*` means that the entry is due to the ambiguity o
-f crystal 
+The table below gives an idea of which terms are implemented in each code 
+(:math:`^*` indicates that the entry is due to the ambiguity of crystal 
 field parameterization, see :ref:`mapping_crystal-field_ambiguity` and
 :ref:`mapping_two-ion-crystal-field_ambiguity`)
-
 
 
 .. list-table:: 
     :header-rows: 1
     :stub-columns: 1
+    :widths: 10 18 18 18 18 18 10
 
     * - 
-      - :math:`n_{sites} = 0`
-      - :math:`n_{sites} = 1`
-      - :math:`n_{sites} = 2`
-      - :math:`n_{sites} = 3`
-      - :math:`n_{sites} = 4`
+      - :math:`l = 1`
+      - :math:`l = 2`
+      - :math:`l = 3`
+      - :math:`l = 4`
+      - :math:`l = 5`
       - :math:`\ldots`
-    * - :math:`n_{entities} = 0`
+    * - :math:`k = 1`
+      - :ref:`zoo_magnopy`,
+        :ref:`zoo_magpie`,
+        :ref:`zoo_mcphase`,
+        :ref:`zoo_spinw`
+        :ref:`zoo_spirit`
+        :ref:`zoo_sunny`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
-      - :math:`\times`
-    * - :math:`n_{entities} = 1`
-      - :math:`\times`
-      - :ref:`zoo_magnopy`, :ref:`zoo_magpie`, :ref:`zoo_mcphase`, :ref:`zoo_spinw`, :ref:`zoo_spirit`, :ref:`zoo_sunny`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-      - :math:`\times`
-    * - :math:`n_{entities} = 2`
-      - :math:`\times`
+    * - :math:`k = 2`
       - :ref:`zoo_grogu`, :ref:`zoo_jukkr`, :ref:`zoo_magnopy`, :ref:`zoo_magpie`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spinw`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`, :ref:`zoo_tb2j`
       - :ref:`zoo_grogu`, :ref:`zoo_jukkr`, :ref:`zoo_magnopy`, :ref:`zoo_magpie`, :ref:`zoo_mcphase`, :ref:`zoo_spinw`, :ref:`zoo_spirit`, :ref:`zoo_sunny`, :ref:`zoo_tb2j`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
-    * - :math:`n_{entities} = 3`
       - :math:`\times`
-      - :ref:`zoo_magnopy`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`
+    * - :math:`k = 3`
+      - :ref:`zoo_magnopy`, 
+        :ref:`zoo_mcphase`:math:`^*`, 
+        :ref:`zoo_sunny`:math:`^*`
+      - :ref:`zoo_magnopy`, 
+        :ref:`zoo_mcphase`:math:`^*`
       - :ref:`zoo_magnopy`
-      - :ref:`zoo_magnopy`
       - :math:`\times`
       - :math:`\times`
-    * - :math:`n_{entities} = 4`
       - :math:`\times`
-      - :ref:`zoo_magnopy`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`
-      - :ref:`zoo_magnopy`, :ref:`zoo_spinw`, :ref:`zoo_spirit`
-      - :ref:`zoo_magnopy`, :ref:`zoo_spirit`
-      - :ref:`zoo_magnopy`, :ref:`zoo_spirit`
+    * - :math:`k = 4`
+      - :ref:`zoo_magnopy`, 
+        :ref:`zoo_mcphase`:math:`^*`, 
+        :ref:`zoo_spirit`, 
+        :ref:`zoo_sunny`:math:`^*`
+      - :ref:`zoo_magnopy`, 
+        :ref:`zoo_mcphase`:math:`^*`
+      - :ref:`zoo_magnopy`, 
+        :ref:`zoo_spinw`, 
+        :ref:`zoo_spirit`
+      - :ref:`zoo_magnopy`, 
+        :ref:`zoo_spirit`
+      - :ref:`zoo_magnopy`, 
+        :ref:`zoo_spirit`
       - :math:`\times`
     * - :math:`\ldots`
-      - :math:`\times`
-      - :ref:`zoo_magnopy`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`
-      - :ref:`zoo_magnopy`
-      - :ref:`zoo_magnopy`
-      - :ref:`zoo_magnopy`
-      - :ref:`zoo_magnopy`
-
-
-
-
-
-
-
-
+      - :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_sunny`:math:`^*`
+      - :ref:`zoo_mcphase`:math:`^*`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`
+      - :math:`\ldots`

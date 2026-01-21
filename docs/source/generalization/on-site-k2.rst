@@ -4,197 +4,92 @@
 On-site anisotropy (k = 2)
 **************************
 
-.. include:: on-site.inc
+On-site anisotropy of the second order involves one magnetic site and two
+entities. Therefore, it can be expressed via the term :math:`\mathcal{H}_{2, 1}`.
 
-Contributions to the term with :math:`k = 1` are discussed in
-:ref:`mapping_zeeman`, with :math:`k = 4` in :ref:`mapping_on-site-k4`.
-
-In this page we discuss the term with :math:`k = 2`, which can be written as
+- :math:`k = 2`
+- :math:`l = 1`
+- :math:`m_{2,1} = 1`
 
 .. math::
 
-    \mathcal{H}_{2,2}
+    \mathcal{H}_{2,1}
     =
-    C_{2, 2}
-    \sum_{\mu_1, \alpha_1, i_1, i_2}
+    C_{2, 1}
+    \sum_{\substack{\mu_1, \\ \alpha_1,\\ i_1, i_2}}
     V_{\mu_1; \alpha_1}^{i_1, i_2}
     X_{\mu_1; \alpha_1}^{i_1}
     X_{\mu_1; \alpha_1}^{i_2}
-
-.. note::
-    :math:`p(2) = 2`.
-
-GROGU
------
-
-In :ref:`zoo_grogu`, the on-site anisotropy term (quadratic) is written as
-
-.. math::
-
-    \mathcal{H}
-    =
-    \sum_{i}
-    \boldsymbol{e}_{i}
-    \cdot
-    \boldsymbol{K}_{i}
-    \cdot
-    \boldsymbol{e}_{i}
-
-By renaming the indices as :math:`i \rightarrow (\mu_1, \alpha_1)` and
-writing the matrix products explicitly as sums over Cartesian components, one
-gets
-
-.. math::
-
-    \mathcal{H}
-    =
-    \sum_{\mu_1, \alpha_1, i_1, i_2}
-    K_{\mu_1; \alpha_1}^{i_1, i_2}
-    e_{\mu_1; \alpha_1}^{i_1}
-    e_{\mu_1; \alpha_1}^{i_2}
-
-where :math:`i_1, i_2 = x, y, z`. From here the correspondence with the on-site
-term :math:`k = 2` of the general Hamiltonian is clear
-
-.. math::
-
-    C_{2, 2} &= 1
-    \\
-    V_{\mu_1; \alpha_1}^{i_1, i_2} &= K_{\mu_1; \alpha_1}^{i_1, i_2}
-    \\
-    X_{\mu_1; \alpha_1}^{i_1} &= e_{\mu_1; \alpha_1}^{i_1}
-
-
-
-juKKR, Magpie, SpinW
---------------------
-
-In :ref:`zoo_jukkr`, :ref:`zoo_magpie`, and :ref:`zoo_spinw`, the on-site
-anisotropy term (quadratic) is written as
-
-
-.. math::
-
-    \mathcal{H}
-    =
-    \sum_{i}
-    \mathbf{S}_{i}
-    \cdot
-    \boldsymbol{A}_{i}
-    \cdot
-    \mathbf{S}_{i}
-
-By renaming the indices as :math:`i \rightarrow (\mu_1, \alpha_1)` and
-writing the matrix products explicitly as sums over Cartesian components, one
-gets
-
-.. math::
-
-    \mathcal{H}
-    =
-    \sum_{\mu_1, \alpha_1, i_1, i_2}
-    A_{\mu_1; \alpha_1}^{i_1, i_2}
-    S_{\mu_1; \alpha_1}^{i_1}
-    S_{\mu_1; \alpha_1}^{i_2}
-
-where :math:`i_1, i_2 = x, y, z`. From here the correspondence with the on-site
-term :math:`k = 2` of the general Hamiltonian is clear
-
-.. math::
-
-    C_{2, 2} &= 1
-    \\
-    V_{\mu_1; \alpha_1}^{i_1, i_2} &= A_{\mu_1; \alpha_1}^{i_1, i_2}
-    \\
-    X_{\mu_1; \alpha_1}^{i_1} &= S_{\mu_1; \alpha_1}^{i_1}
-
-
-
-Spirit
-------
-
-In :ref:`zoo_spirit`, the on-site anisotropy term that maps to general
-form with :math:`k = 2`  is written as
-
-.. math::
-     \mathcal{H}_{\rm uni} = \sum_j K_j (\hat{K}_j\cdot\vec{n}_j)^2
-
-By renaming the indices as :math:`j \rightarrow (\mu_1, \alpha_1)` and expanding
-the square of the dot product, one gets
-
-.. math::
-
-    \mathcal{H}_{\rm uni}
-    =
-    \sum_{\mu_1, \alpha_1, i_1, i_2}
-    K_{\mu_1; \alpha_1}^{i_1, i_2}
-    n_{\mu_1; \alpha_1}^{i_1}
-    n_{\mu_1; \alpha_1}^{i_2}
-
-where :math:`i_1, i_2 = x, y, z` and matrix :math:`K_{\mu_1; \alpha_1}^{i_1, i_2}` 
-is defined as
-
-.. math::
-
-    K_{\mu_1; \alpha_1}^{i_1, i_2}
-    =
-    \begin{pmatrix}
-        K_j \hat{K}_{j,x}^2 & K_j \hat{K}_{j,x} \hat{K}_{j,y} & K_j \hat{K}_{j,x} \hat{K}_{j,z} \\
-        K_j \hat{K}_{j,x} \hat{K}_{j,y} & K_j \hat{K}_{j,y}^2 & K_j \hat{K}_{j,y} \hat{K}_{j,z} \\
-        K_j \hat{K}_{j,x} \hat{K}_{j,z} & K_j \hat{K}_{j,y} \hat{K}_{j,z} & K_j \hat{K}_{j,z}^2
-    \end{pmatrix} 
-
-From here the correspondence with the on-site term :math:`k = 2` of the general 
-Hamiltonian is clear
-
-.. math::
-
-    C_{2, 2} &= 1
-    \\
-    V_{\mu_1; \alpha_1}^{i_1, i_2} &= K_{\mu_1; \alpha_1}^{i_1, i_2}
-    \\
-    X_{\mu_1; \alpha_1}^{i_1} &= n_{\mu_1; \alpha_1}^{i_1}
     
+The summary of the mapping for each code is given in the table below.
 
-TB2J
-----
+.. list-table::
+    :header-rows: 1
+    :stub-columns: 1
 
-In :ref:`zoo_tb2j`, the on-site anisotropy term (quadratic) is written as
-
-
-.. math::
-
-    \mathcal{H}
-    =
-    -
-    \sum_{i}
-    \mathbf{S}_{i}
-    \cdot
-    \boldsymbol{A}_{i}
-    \cdot
-    \mathbf{S}_{i}
-
-By renaming the indices as :math:`i \rightarrow (\mu_1, \alpha_1)` and
-writing the matrix products explicitly as sums over Cartesian components, one
-gets
-
-.. math::
-
-    \mathcal{H}
-    =
-    -
-    \sum_{\mu_1, \alpha_1, i_1, i_2}
-    A_{\mu_1; \alpha_1}^{i_1, i_2}
-    S_{\mu_1; \alpha_1}^{i_1}
-    S_{\mu_1; \alpha_1}^{i_2}
-
-where :math:`i_1, i_2 = x, y, z`. From here the correspondence with the on-site
-term :math:`k = 2` of the general Hamiltonian is clear
-
-.. math::
-
-    C_{2, 2} &= -1
-    \\
-    V_{\mu_1; \alpha_1}^{i_1, i_2} &= A_{\mu_1; \alpha_1}^{i_1, i_2}
-    \\
-    X_{\mu_1; \alpha_1}^{i_1} &= S_{\mu_1; \alpha_1}^{i_1}
+    *   - Code
+        - :ref:`zoo_grogu`
+        - :ref:`zoo_jukkr`, :ref:`zoo_magpie`, :ref:`zoo_spinw`
+        - :ref:`zoo_spirit`
+        - :ref:`zoo_tb2j`
+    *   - :math:`\mathcal{H}`
+        - .. math::
+            \mathcal{H}
+            =
+            \sum_{i}
+            \boldsymbol{e}_{i}
+            \cdot
+            \boldsymbol{K}_{i}
+            \cdot
+            \boldsymbol{e}_{i}
+        - .. math::
+            \mathcal{H}
+            =
+            \sum_{i}
+            \mathbf{S}_{i}
+            \cdot
+            \boldsymbol{A}_{i}
+            \cdot
+            \mathbf{S}_{i}
+        - .. math::
+            \mathcal{H}_{\rm uni}
+            =
+            \sum_j K_j (\hat{K}_j\cdot\vec{n}_j)^2
+        - .. math::
+            \mathcal{H}
+            =
+            -
+            \sum_{i}
+            \mathbf{S}_{i}
+            \cdot
+            \boldsymbol{A}_{i}
+            \cdot
+            \mathbf{S}_{i}
+    *   - Index renaming
+        - :math:`i \rightarrow (\mu_1, \alpha_1)`
+        - :math:`i \rightarrow (\mu_1, \alpha_1)`
+        - :math:`j \rightarrow (\mu_1, \alpha_1)`
+        - :math:`i \rightarrow (\mu_1, \alpha_1)`
+    *   - :math:`C_{2,1}`
+        - :math:`1`
+        - :math:`1`
+        - :math:`1`
+        - :math:`-1`
+    *   - :math:`V_{\mu_1; \alpha_1}^{i_1, i_2}`
+        - :math:`K_{\mu_1; \alpha_1}^{i_1, i_2}`
+        - :math:`A_{\mu_1; \alpha_1}^{i_1, i_2}`
+        - .. math::
+            K_j^{i_1, i_2}
+            =
+            \begin{pmatrix}
+                K_j \left(\hat{K}_{j}^{x}\right)^2 & K_j \hat{K}_{j}^{x} \hat{K}_{j}^{y} & K_j \hat{K}_{j}^{x} \hat{K}_{j}^{z} \\
+                K_j \hat{K}_{j}^{x} \hat{K}_{j}^{y} & K_j \left(\hat{K}_{j}^{y}\right)^2 & K_j \hat{K}_{j}^{y} \hat{K}_{j}^{z} \\
+                K_j \hat{K}_{j}^{x} \hat{K}_{j}^{z} & K_j \hat{K}_{j}^{y} \hat{K}_{j}^{z} & K_j \left(\hat{K}_{j}^{z}\right)^2
+            \end{pmatrix} 
+        - :math:`A_{\mu_1; \alpha_1}^{i_1, i_2}`
+    *   - :math:`X_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`e_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`S_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`n_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`S_{\mu_1; \alpha_1}^{i_1}` 
+        
