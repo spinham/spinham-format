@@ -170,8 +170,12 @@ With those rules in mind one can sketch the table, without any terms filled in
       - :math:`n_{sites} = 0`
       - :math:`n_{sites} = 1`
       - :math:`n_{sites} = 2`
+      - :math:`n_{sites} = 3`
+      - :math:`n_{sites} = 4`
       - :math:`\ldots`
     * - :math:`n_{entities} = 0`
+      - :math:`\times`
+      - :math:`\times`
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`
@@ -181,23 +185,33 @@ With those rules in mind one can sketch the table, without any terms filled in
       - 
       - :math:`\times`
       - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
     * - :math:`n_{entities} = 2`
       - :math:`\times`
       - 
       - 
+      - :math:`\times`
+      - :math:`\times`
       - :math:`\times`
     * - :math:`n_{entities} = 3`
       - :math:`\times`
       - 
       -
       - 
+      - :math:`\times`
+      - :math:`\times`
     * - :math:`n_{entities} = 4`
       - :math:`\times`
       - 
       -
       - 
+      - 
+      - :math:`\times`
     * - :math:`\ldots`
       - :math:`\times`
+      - 
+      - 
       - 
       - 
       - 
@@ -501,7 +515,6 @@ Mapping to the general form
 Finally, lets consider the terms of the Hamiltonian that are present in the
 :ref:`"zoo" <zoo>` and map each one of them to the general form above.
 
-
 .. toctree::
     :maxdepth: 1
 
@@ -517,8 +530,8 @@ Finally, lets consider the terms of the Hamiltonian that are present in the
     crystal-field
     two-ion-crystal-field
 
-
-and fill in the table
+After those exercises in mapping one can fill the table by placing the type of
+interactions in it
 
 
 .. list-table:: 
@@ -574,6 +587,69 @@ and fill in the table
       - 
       -
       -
+
+
+or by placing the code names in the cells where the code has some term
+implemented (:math:`^*` means that the entry is due to the ambiguity o
+f crystal 
+field parameterization, see :ref:`mapping_crystal-field_ambiguity` and
+:ref:`mapping_two-ion-crystal-field_ambiguity`)
+
+
+
+.. list-table:: 
+    :header-rows: 1
+    :stub-columns: 1
+
+    * - 
+      - :math:`n_{sites} = 0`
+      - :math:`n_{sites} = 1`
+      - :math:`n_{sites} = 2`
+      - :math:`n_{sites} = 3`
+      - :math:`n_{sites} = 4`
+      - :math:`\ldots`
+    * - :math:`n_{entities} = 0`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`n_{entities} = 1`
+      - :math:`\times`
+      - :ref:`zoo_magnopy`, :ref:`zoo_magpie`, :ref:`zoo_mcphase`, :ref:`zoo_spinw`, :ref:`zoo_spirit`, :ref:`zoo_sunny`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`n_{entities} = 2`
+      - :math:`\times`
+      - :ref:`zoo_grogu`, :ref:`zoo_jukkr`, :ref:`zoo_magnopy`, :ref:`zoo_magpie`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spinw`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`, :ref:`zoo_tb2j`
+      - :ref:`zoo_grogu`, :ref:`zoo_jukkr`, :ref:`zoo_magnopy`, :ref:`zoo_magpie`, :ref:`zoo_mcphase`, :ref:`zoo_spinw`, :ref:`zoo_spirit`, :ref:`zoo_sunny`, :ref:`zoo_tb2j`
+      - :math:`\times`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`n_{entities} = 3`
+      - :math:`\times`
+      - :ref:`zoo_magnopy`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`
+      - :ref:`zoo_magnopy`
+      - :ref:`zoo_magnopy`
+      - :math:`\times`
+      - :math:`\times`
+    * - :math:`n_{entities} = 4`
+      - :math:`\times`
+      - :ref:`zoo_magnopy`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`
+      - :ref:`zoo_magnopy`, :ref:`zoo_spinw`, :ref:`zoo_spirit`
+      - :ref:`zoo_magnopy`, :ref:`zoo_spirit`
+      - :ref:`zoo_magnopy`, :ref:`zoo_spirit`
+      - :math:`\times`
+    * - :math:`\ldots`
+      - :math:`\times`
+      - :ref:`zoo_magnopy`, :ref:`zoo_mcphase`:math:`^*`, :ref:`zoo_spirit`, :ref:`zoo_sunny`:math:`^*`
+      - :ref:`zoo_magnopy`
+      - :ref:`zoo_magnopy`
+      - :ref:`zoo_magnopy`
+      - :ref:`zoo_magnopy`
 
 
 
