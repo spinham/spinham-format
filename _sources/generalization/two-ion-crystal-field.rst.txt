@@ -4,8 +4,8 @@
 Two-ion crystal field
 *********************
 
-Two-ion crystal field involves two magnetic sites and two entities. Therefore, it
-can be expressed via the term :math:`\mathcal{H}_{2, 2}`.
+Two-ion crystal field involves two sites and two entities. Therefore, it can be
+expressed via the term :math:`\mathcal{H}_{2, 2}`.
 
 - :math:`k = 2`
 - :math:`l = 2`

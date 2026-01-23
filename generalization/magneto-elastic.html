@@ -3,10 +3,10 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Magnetic dipole-dipole interaction" href="dipole-dipole.html"><link rel="prev" title="Biquadratic exchange" href="biquadratic-exchange.html">
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="On-site anisotropy (k = 2)" href="on-site-k2.html"><link rel="prev" title="Exchange striction" href="exchange-striction.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Crystal field - Spinham format</title>
+        <title>Magneto-elastic interaction - Spinham format</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -216,10 +216,10 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Attempt at generalization</a><input aria-label="Toggle navigation of Attempt at generalization" checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="bilinear-exchange.html">Bilinear exchange</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biquadratic-exchange.html">Biquadratic exchange</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal-field.html">Crystal field</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exchange-striction.html">Exchange striction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="magneto-elastic.html">Magneto-elastic interaction</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Magneto-elastic interaction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="on-site-k2.html">On-site anisotropy (k = 2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="on-site-k4.html">On-site anisotropy (k = 4)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quadruplet-interaction.html">Quadruplet interaction</a></li>
@@ -248,7 +248,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/generalization/crystal-field.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/generalization/magneto-elastic.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -266,12 +266,26 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="crystal-field">
-<span id="mapping-crystal-field"></span><h1>Crystal field<a class="headerlink" href="#crystal-field" title="Link to this heading">¶</a></h1>
-<p>Crystal field terms involve one site and either one or <span class="math notranslate nohighlight">\(k\)</span> entities
-(depending on the mapping procedure choice). Consider case with one entity as a
-preferred mapping scheme. Then, it can be expressed via the term
-<span class="math notranslate nohighlight">\(\mathcal{H}_{1, 1}\)</span>.</p>
+          <section id="magneto-elastic-interaction">
+<span id="mapping-magneto-elastic"></span><h1>Magneto-elastic interaction<a class="headerlink" href="#magneto-elastic-interaction" title="Link to this heading">¶</a></h1>
+<p>Magneto-elastic interaction involves either two sites and two entities
+or one site and one entity. Therefore, it can be expressed via the terms
+<span class="math notranslate nohighlight">\(\mathcal{H}_{2, 2}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{H}_{1, 1}\)</span>.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(l = 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(m_{2,2} = 2\)</span></p></li>
+</ul>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{H}_{2,2}
+=
+C_{2, 2}
+\sum_{\substack{\mu_1, \mu_2,\\ \alpha_1, \alpha_2,\\ i_1, i_2}}
+V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2}
+X_{\mu_1; \alpha_1}^{i_1}
+X_{\mu_2; \alpha_2}^{i_2}\end{split}\]</div>
+</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(k = 1\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(l = 1\)</span></p></li>
@@ -279,75 +293,95 @@ preferred mapping scheme. Then, it can be expressed via the term
 </ul>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[\mathcal{H}_{1,1}
+\[\begin{split}\mathcal{H}_{1,1}
 =
 C_{1, 1}
-\sum_{\mu_1, \alpha_1, i_1}
+\sum_{\substack{\mu_1,\\ \alpha_1,\\ i_1}}
 V_{\mu_1; \alpha_1}^{i_1}
-X_{\mu_1; \alpha_1}^{i_1}\]</div>
+X_{\mu_1; \alpha_1}^{i_1}\end{split}\]</div>
 </div>
-<p>The summary of the mapping for each code is given in the table below.</p>
+<p>The summary of the mapping for two terms is given in the tables below.</p>
+<section id="magneto-elastic-interaction-1-1">
+<span id="mapping-magneto-elastic-1-1"></span><h2>Magneto-elastic interaction (1, 1)<a class="headerlink" href="#magneto-elastic-interaction-1-1" title="Link to this heading">¶</a></h2>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head stub"><p>Code</p></th>
-<th class="head"><p><a class="reference internal" href="../spinham-zoo/mcphase.html#zoo-mcphase"><span class="std std-ref">McPhase</span></a> (v1)</p></th>
-<th class="head"><p><a class="reference internal" href="../spinham-zoo/mcphase.html#zoo-mcphase"><span class="std std-ref">McPhase</span></a> (v2)</p></th>
-<th class="head"><p><a class="reference internal" href="../spinham-zoo/sunny.html#zoo-sunny"><span class="std std-ref">Sunny</span></a></p></th>
+<th class="head"><p><a class="reference internal" href="../spinham-zoo/mcphase.html#zoo-mcphase"><span class="std std-ref">McPhase</span></a></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(\mathcal{H}\)</span></p></th>
 <td><div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[\hat{\mathcal{H}}
+\[\hat{\mathcal{H}}_{ME1}
 =
+-
 \sum_n
-\sum_{lm}
-B_l^m
-\hat{O}_{lm}(\mathbf{J}^n)\]</div>
-</div>
-</td>
-<td><div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\hat{\mathcal{H}}
-=
-\sum_n
-\sum_{lm}
-L_l^m(n)
-\hat{T}_{lm}^{n}\]</div>
-</div>
-</td>
-<td><div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\mathcal{H}
-=
-\sum_{i}\sum_{k,q}
-c_{i,k,q}
-\mathcal{O}_{k,q}
-(\mathbf{S}_{i})\]</div>
+\sum_{\alpha=1,\dots,6, lm}
+G^{\alpha,l,m}_{\text{cfph}}(n)
+\epsilon_{\alpha}
+O_{lm}(\hat{\mathbf{J}}^n)\]</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><th class="stub"><p>Indices renaming</p></th>
-<td><p><span class="math notranslate nohighlight">\(n \rightarrow (\mu_1, \alpha_1)\)</span>, <span class="math notranslate nohighlight">\((l,m) \rightarrow i_1\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(n \rightarrow (\mu_1, \alpha_1)\)</span>, <span class="math notranslate nohighlight">\((l,m) \rightarrow i_1\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(i \rightarrow (\mu_1, \alpha_1)\)</span>, <span class="math notranslate nohighlight">\((k,q) \rightarrow i_1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n \rightarrow (\mu_1; \alpha_1)\)</span>,
+<span class="math notranslate nohighlight">\((l,m) \rightarrow i_1\)</span></p></td>
 </tr>
-<tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(C_{4, 3}\)</span></p></th>
-<td><p>1</p></td>
-<td><p>1</p></td>
-<td><p>1</p></td>
+<tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(C_{1, 1}\)</span></p></th>
+<td><p><span class="math notranslate nohighlight">\(-1\)</span></p></td>
 </tr>
 <tr class="row-odd"><th class="stub"><p><span class="math notranslate nohighlight">\(V_{\mu_1; \alpha_1}^{i_1}\)</span></p></th>
-<td><p><span class="math notranslate nohighlight">\(B^{i_1}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(L^{i_1}(\mu_1, \alpha_1)\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(c_{\mu_1, \alpha_1, i_1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sum_{\alpha=1,\dots,6}G^{\alpha, i_1}_{\text{cfph}}(\mu_1,\alpha_1)\epsilon_{\alpha}\)</span></p></td>
 </tr>
 <tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(X_{\mu_1; \alpha_1}^{i_1}\)</span></p></th>
-<td><p><span class="math notranslate nohighlight">\(\hat{O}_{i_1}(\mathbf{J}^{\mu_1, \alpha_1})\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\hat{T}_{i_1}^{\mu_1, \alpha_1}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\mathcal{O}_{i_1}(\mathbf{S}_{\mu_1, \alpha_1})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(O_{i_1}(\hat{\mathbf{J}}^{\mu_1, \alpha_1})\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="magneto-elastic-interaction-2-2">
+<span id="mapping-magneto-elastic-2-2"></span><h2>Magneto-elastic interaction (2, 2)<a class="headerlink" href="#magneto-elastic-interaction-2-2" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head stub"><p>Code</p></th>
+<th class="head"><p><a class="reference internal" href="../spinham-zoo/mcphase.html#zoo-mcphase"><span class="std std-ref">McPhase</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(\mathcal{H}\)</span></p></th>
+<td><div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{\mathcal{H}}_{ME2}
+=
+-
+\sum_{\substack{n&lt;n^{\prime},lm,\\\alpha=1,2,3}}
+\Gamma^{\alpha,l,m}(nn^{\prime})
+\hat{u}_n^{\alpha}
+O_{lm}(\hat{\mathbf{J}}^{n^{\prime}})\end{split}\]</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Indices renaming</p></th>
+<td><p><span class="math notranslate nohighlight">\(n \rightarrow (\mu_1; \alpha_1)\)</span>,
+<span class="math notranslate nohighlight">\(n^{\prime} \rightarrow (\mu_2; \alpha_2)\)</span>,
+<span class="math notranslate nohighlight">\(\alpha \rightarrow i_1\)</span>,
+<span class="math notranslate nohighlight">\((l,m) \rightarrow i_2\)</span></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(C_{2, 2}\)</span></p></th>
+<td><p><span class="math notranslate nohighlight">\(-1\)</span></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><span class="math notranslate nohighlight">\(V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2}\)</span></p></th>
+<td><p><span class="math notranslate nohighlight">\(\Gamma^{i_1, i_2}(\mu_1, \alpha_1, \mu_2, \alpha_2)\)</span></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(X_{\mu_1; \alpha_1}^{i_1}\)</span></p></th>
+<td><p><span class="math notranslate nohighlight">\(\hat{u}_{\mu_1, \alpha_1}^{i_1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p><span class="math notranslate nohighlight">\(X_{\mu_2; \alpha_2}^{i_2}\)</span></p></th>
+<td><p><span class="math notranslate nohighlight">\(O_{i_2}(\hat{\mathbf{J}}^{\mu_2, \alpha_2})\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -355,63 +389,13 @@ c_{i,k,q}
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>Pairs of indices <span class="math notranslate nohighlight">\((l,m)\)</span> or <span class="math notranslate nohighlight">\((k,q)\)</span> run over the finite set
-of the sets of two integers. Therefore, they can be enumerated with a
-single integer and mapped to the index <span class="math notranslate nohighlight">\(i_1\)</span>.</p></li>
+<li><p>Pair of indices <span class="math notranslate nohighlight">\((l,m)\)</span> run over the finite set of the sets of two
+integers. Therefore, they can be enumerated with a single integer and
+mapped to the index <span class="math notranslate nohighlight">\(i_1\)</span> (<span class="math notranslate nohighlight">\(i_2\)</span>).</p></li>
+<li><p>In the case of <span class="math notranslate nohighlight">\((2, 2)\)</span>, index <span class="math notranslate nohighlight">\(i_1 = x, y, z\)</span>, while index
+<span class="math notranslate nohighlight">\(i_2\)</span> runs over all pairs of integers <span class="math notranslate nohighlight">\((l,m)\)</span> of the
+original Hamiltonian.</p></li>
 </ul>
-</div>
-<section id="crystal-field-ambiguity">
-<span id="mapping-crystal-field-ambiguity"></span><h2>Crystal field (ambiguity)<a class="headerlink" href="#crystal-field-ambiguity" title="Link to this heading">¶</a></h2>
-<p>Alternatively, the crystal field term can be mapped to the terms with one site
-and various amount of entities if one is to express the Stevens operators
-via the angular momentum/spin operators.</p>
-<p>Here is an example that illustrate it. Consider the term (in McPhase's notation)</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\mathcal{H}
-=
-B_2^0 \hat{O}_{2}^0(\mathbf{J}^n)\]</div>
-</div>
-<p>One can express the Stevens operators through angular momentum operator as</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\mathcal{H}
-=
-B_2^0
-\Bigl(
-    3 (\hat{J}_z^n)^2 - J(J+1)
-\Bigr)
-=
-E_{const}
-+
-3B_2^0
-\hat{J}_z^n \hat{J}_z^n\]</div>
-</div>
-<p>By renaming indices as <span class="math notranslate nohighlight">\(n \rightarrow (\mu_1, \alpha_1)\)</span> one can express
-the non-constant part as</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\mathcal{H}
-=
-C_{2,1}
-\sum_{\mu_1, \alpha_1, i_1, i_2}
-V_{\mu_1; \alpha_1}^{i_1, i_2}
-X_{\mu_1; \alpha_1}^{i_1}
-X_{\mu_1; \alpha_1}^{i_1}\]</div>
-</div>
-<p>where</p>
-<div class="math-wrapper docutils container">
-<div class="math notranslate nohighlight">
-\[\begin{split}C_{2,1} &amp;= 1
-\\
-V_{\mu_1; \alpha_1} &amp;=
-\begin{pmatrix}
-    0 &amp; 0 &amp; 0 \\
-    0 &amp; 0 &amp; 0 \\
-    0 &amp; 0 &amp; 3B_2^0
-\end{pmatrix}
-\\
-X_{\mu_1; \alpha_1}^{i} &amp;= \hat{J}_{i_1}^{\mu_1, \alpha_1}\end{split}\]</div>
 </div>
 </section>
 </section>
@@ -421,23 +405,23 @@ X_{\mu_1; \alpha_1}^{i} &amp;= \hat{J}_{i_1}^{\mu_1, \alpha_1}\end{split}\]</div
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="dipole-dipole.html">
+          <a class="next-page" href="on-site-k2.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Magnetic dipole-dipole interaction</div>
+                <div class="title">On-site anisotropy (k = 2)</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="biquadratic-exchange.html">
+          <a class="prev-page" href="exchange-striction.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Biquadratic exchange</div>
+                <div class="title">Exchange striction</div>
                 
               </div>
             </a>
@@ -471,8 +455,9 @@ X_{\mu_1; \alpha_1}^{i} &amp;= \hat{J}_{i_1}^{\mu_1, \alpha_1}\end{split}\]</div
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Crystal field</a><ul>
-<li><a class="reference internal" href="#crystal-field-ambiguity">Crystal field (ambiguity)</a></li>
+<li><a class="reference internal" href="#">Magneto-elastic interaction</a><ul>
+<li><a class="reference internal" href="#magneto-elastic-interaction-1-1">Magneto-elastic interaction (1, 1)</a></li>
+<li><a class="reference internal" href="#magneto-elastic-interaction-2-2">Magneto-elastic interaction (2, 2)</a></li>
 </ul>
 </li>
 </ul>

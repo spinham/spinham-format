@@ -4,8 +4,8 @@
 Magnetic dipole-dipole interaction
 **********************************
 
-Magnetic dipole-dipole interaction involves two magnetic sites and
-two entities. it can be expressed via the term :math:`\mathcal{H}_{2, 2}`.
+Magnetic dipole-dipole interaction involves two sites and two entities. It can
+be expressed via the term :math:`\mathcal{H}_{2, 2}`.
 
 - :math:`k = 2`
 - :math:`l = 2`

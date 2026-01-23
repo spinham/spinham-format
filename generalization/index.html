@@ -219,6 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="crystal-field.html">Crystal field</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="exchange-striction.html">Exchange striction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magneto-elastic.html">Magneto-elastic interaction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="on-site-k2.html">On-site anisotropy (k = 2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="on-site-k4.html">On-site anisotropy (k = 4)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quadruplet-interaction.html">Quadruplet interaction</a></li>
@@ -284,12 +285,12 @@ required). In such way, the sum of the form</p>
 other words, index <span class="math notranslate nohighlight">\(\mu_1\)</span> runs over all cells of the lattice and for each
 value of <span class="math notranslate nohighlight">\(\mu_1\)</span>, index <span class="math notranslate nohighlight">\(\mu_2\)</span> also runs over all cells of the
 lattice.</p>
-<p>Second, assume that there are <span class="math notranslate nohighlight">\(N\)</span> magnetic sites in each cell of the
-lattice. Label each magnetic site in the lattice with an index <span class="math notranslate nohighlight">\(\alpha\)</span>
-(or <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span>, and so on if more than one magnetic site
-index is required).</p>
-<p>With the definitions from above, the position of an arbitrary magnetic site in
-such structure is defined by the radius vector</p>
+<p>Second, assume that there are <span class="math notranslate nohighlight">\(N\)</span> (magnetic) sites in each cell of the
+lattice. Label each site in the lattice with an index <span class="math notranslate nohighlight">\(\alpha\)</span>
+(or <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span>, and so on if more than one site index is
+required).</p>
+<p>With the definitions from above, the position of an arbitrary site in such
+structure is defined by the radius vector</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[\mathbf{r}_{\mu; \alpha} = \mathbf{r}_{\mu} + \mathbf{r}_{\alpha}\]</div>
@@ -305,9 +306,9 @@ component index is required).</p>
 <p>In the following one shall keep in mind the usual 3D space (<span class="math notranslate nohighlight">\(d = 3\)</span>).</p>
 </section>
 <section id="magnetic-sites">
-<h2>Magnetic sites<a class="headerlink" href="#magnetic-sites" title="Link to this heading">¶</a></h2>
-<p>Once the structure is defined, imagine that each magnetic site has an &quot;entity&quot;
-associated with it. Label such an entity with the capital letter <span class="math notranslate nohighlight">\(X\)</span>. The
+<h2>(Magnetic) sites<a class="headerlink" href="#magnetic-sites" title="Link to this heading">¶</a></h2>
+<p>Once the structure is defined, imagine that each site has an &quot;entity&quot; associated
+with it. Label such an entity with the capital letter <span class="math notranslate nohighlight">\(X\)</span>. The
 interpretation of the letter <span class="math notranslate nohighlight">\(X\)</span> depends on the term of the Hamiltonian,
 which it enters. For example, it can be a spin vector, a spin operator, an
 angular momentum operator, a Stevens operator, a Wybourne operator and so on.</p>
@@ -327,10 +328,10 @@ can have different meaning.</p>
 <div class="math notranslate nohighlight">
 \[X_{\mu; \alpha}\]</div>
 </div>
-<p>As each entity is associated with a magnetic site, its position is simply
-the position of that magnetic site.</p>
+<p>As each entity is associated with a site, its position is simply the
+position of tha site.</p>
 </li>
-<li><p>Two entities that are associated with two distinct magnetic sites commute.</p>
+<li><p>Two entities that are associated with two distinct sites commute.</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[[X_{\mu_1; \alpha_1}^{i_1}, X_{\mu_2; \alpha_2}^{i_2}] = 0\]</div>
@@ -340,17 +341,17 @@ the position of that magnetic site.</p>
 </ul>
 <p>In the following whether the indices <span class="math notranslate nohighlight">\((\mu_1; \alpha_1)\)</span> and
 <span class="math notranslate nohighlight">\((\mu_2; \alpha_2)\)</span> are written within the same context it is implied that
-they indicate distinct magnetic sites:
+they indicate distinct sites:
 <span class="math notranslate nohighlight">\((\mu_1; \alpha_1) \neq (\mu_2; \alpha_2)\)</span>.</p>
 </section>
 <section id="interaction-parameters">
 <h2>Interaction parameters<a class="headerlink" href="#interaction-parameters" title="Link to this heading">¶</a></h2>
-<p>Then, an interaction between magnetic sites is described by the interaction
-parameters. Label such an interaction parameter with the capital letter
-<span class="math notranslate nohighlight">\(V\)</span>. Each interaction parameter connects one or more entities, whilst
-those entities are associates with one or more magnetic sites. As with entities,
-the interpretation of the interaction parameter <span class="math notranslate nohighlight">\(V\)</span> depends on the term of
-the Hamiltonian, which it enters. However, there are two common properties</p>
+<p>Then, an interaction between sites is described by the interaction parameters.
+Label such an interaction parameter with the capital letter <span class="math notranslate nohighlight">\(V\)</span>. Each
+interaction parameter connects one or more entities, whilst those entities are
+associates with one or more sites. As with entities, the interpretation of the
+parameter <span class="math notranslate nohighlight">\(V\)</span> depends on the term of the Hamiltonian, which it enters.
+However, there are two common properties</p>
 <ul>
 <li><p>Each interaction parameter has as many independent dimensions as the number of
 components of the entities that it connects. For example, an interaction
@@ -362,19 +363,19 @@ parameter</p>
 <p>connects <span class="math notranslate nohighlight">\(k\)</span> entities.</p>
 </li>
 <li><p>Each interaction parameter depends on as many pairs of position indices
-(cell index and magnetic site index) as the number of unique magnetic sites
-that it connects. For example, an interaction parameter</p>
+(cell index and site index) as the number of unique sites that it connects.
+For example, an interaction parameter</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[V_{\mu_1, \mu_2, \ldots, \mu_m; \alpha_1, \alpha_2, \ldots, \alpha_m}\]</div>
 </div>
-<p>connects <span class="math notranslate nohighlight">\(m\)</span> unique magnetic sites.</p>
+<p>connects <span class="math notranslate nohighlight">\(m\)</span> unique sites.</p>
 </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Amount of entities and the amount of unique magnetic sites can be different.
-For example, an interaction parameter can connect two entities
+<p>Amount of entities and the amount of unique sites can be different. For
+example, an interaction parameter can connect two entities
 <span class="math notranslate nohighlight">\(X_{\mu_1; \alpha_1}^{i_1}\)</span> and <span class="math notranslate nohighlight">\(X_{\mu_1; \alpha_1}^{i_2}\)</span> is
 denoted as</p>
 <div class="math-wrapper docutils container">
@@ -395,13 +396,12 @@ denoted as</p>
 <p>The Hamiltonian itself is constructed with the following properties in mind</p>
 <ul class="simple">
 <li><p>Terms of the Hamiltonian can involve an arbitrary amount of entities.</p></li>
-<li><p>Terms of the Hamiltonian can involve an arbitrary amount of unique magnetic
-sites.</p></li>
+<li><p>Terms of the Hamiltonian can involve an arbitrary amount of unique sites.</p></li>
 <li><p>Each combination of components of the entities can have a unique
 interaction parameter associated with it.</p></li>
 </ul>
 <p>Consider an arbitrary term of the Hamiltonian. Let it involve <span class="math notranslate nohighlight">\(m\)</span> distinct
-magnetic sites</p>
+sites</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[(\mu_1; \alpha_1), (\mu_2; \alpha_2), \ldots, (\mu_m; \alpha_m)\]</div>
@@ -416,11 +416,11 @@ as</p>
 and <span class="math notranslate nohighlight">\(m\)</span>? The answer is</p>
 <ul>
 <li><p><span class="math notranslate nohighlight">\(k \ge m\)</span>.</p>
-<p>As every entity is associated with exactly one magnetic site.</p>
+<p>As every entity is associated with exactly one site.</p>
 </li>
 <li><p><span class="math notranslate nohighlight">\(k \ne 0\)</span> and <span class="math notranslate nohighlight">\(m \ne 0\)</span>.</p>
 <p>If the Hamiltonian includes a term that is independent of the entities or
-does not involve any magnetic sites, then such a term either describes the
+does not involve any sites, then such a term either describes the
 environment and not the system or is a constant energy term that can be
 ignored.</p>
 </li>
@@ -480,8 +480,7 @@ terms.</p>
 </div>
 <p>Unfortunately, one can not simply classify the terms of the Hamiltonian by the
 pair <span class="math notranslate nohighlight">\((k, m)\)</span>. First counter-example occurs when <span class="math notranslate nohighlight">\(k = 4\)</span>. Imagine
-two terms that both involve <span class="math notranslate nohighlight">\(k = 4\)</span> entities and <span class="math notranslate nohighlight">\(m = 2\)</span> magnetic
-sites</p>
+two terms that both involve <span class="math notranslate nohighlight">\(k = 4\)</span> entities and <span class="math notranslate nohighlight">\(m = 2\)</span> sites</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2, i_3, i_4}
@@ -580,8 +579,7 @@ its values for a few first values of <span class="math notranslate nohighlight">
 <span class="math notranslate nohighlight">\((k, l)\)</span>, where <span class="math notranslate nohighlight">\(k\)</span> is the amount of entities and <span class="math notranslate nohighlight">\(l\)</span> is
 an index of a particular integer partition of the number <span class="math notranslate nohighlight">\(k\)</span> (with
 <span class="math notranslate nohighlight">\(l = 1, \ldots, p(k)\)</span>). For each such pair define a number <span class="math notranslate nohighlight">\(m_{k,l}\)</span>,
-which indicates how many unique magnetic sites are involved in the term
-<span class="math notranslate nohighlight">\((k, l)\)</span>.</p>
+which indicates how many unique sites are involved in the term <span class="math notranslate nohighlight">\((k, l)\)</span>.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>To be exact, pick the ordering on the partitions of an integer <span class="math notranslate nohighlight">\(k\)</span> to
@@ -678,7 +676,7 @@ ordering</p>
 </div>
 <p>Redesign a classification table by using the labels <span class="math notranslate nohighlight">\((k, l)\)</span>
 (instead of <span class="math notranslate nohighlight">\((k, m)\)</span>). As entries of the table put the amount of distinct
-magnetic sites <span class="math notranslate nohighlight">\(m_{k,l}\)</span> that are involved in the term.</p>
+sites <span class="math notranslate nohighlight">\(m_{k,l}\)</span> that are involved in the term.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1046,9 +1044,9 @@ V_{\mu_1, \ldots, \mu_{m_{k,l}}; \alpha_1, \ldots, \alpha_{m_{k,l}}}^{i_1, \ldot
 </div>
 <p>where <span class="math notranslate nohighlight">\(n_{l, j}\)</span> indicates how many entities are associated with site
 <span class="math notranslate nohighlight">\((\mu_j; \alpha_j)\)</span> in the integer partition <span class="math notranslate nohighlight">\(l\)</span> of the number
-<span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(m_{k,l}\)</span> is the amount of different magnetic sites
-involved in the term that corresponds to the integer partition <span class="math notranslate nohighlight">\(l\)</span> of
-the number <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(m_{k,l}\)</span> is the amount of different sites involved in the
+term that corresponds to the integer partition <span class="math notranslate nohighlight">\(l\)</span> of the number
+<span class="math notranslate nohighlight">\(k\)</span>.</p>
 </section>
 </section>
 <section id="mapping-to-the-general-form">
@@ -1063,6 +1061,7 @@ the number <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <li class="toctree-l1"><a class="reference internal" href="crystal-field.html">Crystal field</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exchange-striction.html">Exchange striction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="magneto-elastic.html">Magneto-elastic interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="on-site-k2.html">On-site anisotropy (k = 2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="on-site-k4.html">On-site anisotropy (k = 4)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quadruplet-interaction.html">Quadruplet interaction</a></li>
@@ -1093,6 +1092,7 @@ follows</p>
 <tr class="row-even"><th class="stub"><p><span class="math notranslate nohighlight">\(k = 1\)</span></p></th>
 <td><p><a class="reference internal" href="crystal-field.html#mapping-crystal-field"><span class="std std-ref">Crystal field</span></a>,
 <a class="reference internal" href="crystal-field.html#mapping-crystal-field-ambiguity"><span class="std std-ref">Crystal field (ambiguity)</span></a>,
+<a class="reference internal" href="magneto-elastic.html#mapping-magneto-elastic-1-1"><span class="std std-ref">Magneto-elastic interaction (1, 1)</span></a>,
 <a class="reference internal" href="zeeman.html#mapping-zeeman"><span class="std std-ref">Zeeman interaction</span></a></p></td>
 <td><p><span class="math notranslate nohighlight">\(\times\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\times\)</span></p></td>
@@ -1107,7 +1107,8 @@ follows</p>
 <a class="reference internal" href="dipole-dipole.html#mapping-dipole-dipole"><span class="std std-ref">Magnetic dipole-dipole interaction</span></a>,
 <a class="reference internal" href="exchange-striction.html#mapping-exchange-striction"><span class="std std-ref">Exchange striction</span></a>,
 <a class="reference internal" href="two-ion-crystal-field.html#mapping-two-ion-crystal-field"><span class="std std-ref">Two-ion crystal field</span></a>,
-<a class="reference internal" href="two-ion-crystal-field.html#mapping-two-ion-crystal-field-ambiguity"><span class="std std-ref">Two-ion crystal field (ambiguity)</span></a></p></td>
+<a class="reference internal" href="two-ion-crystal-field.html#mapping-two-ion-crystal-field-ambiguity"><span class="std std-ref">Two-ion crystal field (ambiguity)</span></a>,
+<a class="reference internal" href="magneto-elastic.html#mapping-magneto-elastic-2-2"><span class="std std-ref">Magneto-elastic interaction (2, 2)</span></a>,</p></td>
 <td><p><span class="math notranslate nohighlight">\(\times\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\times\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\times\)</span></p></td>
@@ -1286,7 +1287,7 @@ field parameterization, see <a class="reference internal" href="crystal-field.ht
             <ul>
 <li><a class="reference internal" href="#">Attempt at generalization</a><ul>
 <li><a class="reference internal" href="#structure">Structure</a></li>
-<li><a class="reference internal" href="#magnetic-sites">Magnetic sites</a></li>
+<li><a class="reference internal" href="#magnetic-sites">(Magnetic) sites</a></li>
 <li><a class="reference internal" href="#interaction-parameters">Interaction parameters</a></li>
 <li><a class="reference internal" href="#terms-of-the-hamiltonian">Terms of the Hamiltonian</a></li>
 <li><a class="reference internal" href="#the-hamiltonian">The Hamiltonian</a><ul>

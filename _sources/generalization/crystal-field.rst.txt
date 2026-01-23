@@ -4,10 +4,10 @@
 Crystal field
 *************
 
-Crystal field terms involve one magnetic site and either one or :math:`k`
-entities (depending on the mapping procedure choice). Consider case with 
-one entity as a preferred mapping scheme. Then, it can be expressed via the
-term :math:`\mathcal{H}_{1, 1}`.
+Crystal field terms involve one site and either one or :math:`k` entities
+(depending on the mapping procedure choice). Consider case with one entity as a
+preferred mapping scheme. Then, it can be expressed via the term
+:math:`\mathcal{H}_{1, 1}`.
 
 - :math:`k = 1`
 - :math:`l = 1`

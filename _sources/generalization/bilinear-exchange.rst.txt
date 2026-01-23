@@ -4,8 +4,8 @@
 Bilinear exchange
 *****************
 
-Bilinear exchange involves two magnetic sites and two entities. Therefore, it
-can be expressed via the term :math:`\mathcal{H}_{2, 2}`.
+Bilinear exchange involves two sites and two entities. Therefore, it can be
+expressed via the term :math:`\mathcal{H}_{2, 2}`.
 
 - :math:`k = 2`
 - :math:`l = 2`
