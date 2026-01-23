@@ -4,8 +4,8 @@
 Zeeman interaction
 ******************
 
-Zeeman interaction involves two magnetic sites and two entities. Therefore, it
-can be expressed via the term :math:`\mathcal{H}_{1, 1}`.
+Zeeman interaction involves two sites and two entities. Therefore, it can be
+expressed via the term :math:`\mathcal{H}_{1, 1}`.
 
 - :math:`k = 1`
 - :math:`l = 1`

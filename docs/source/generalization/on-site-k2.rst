@@ -4,8 +4,8 @@
 On-site anisotropy (k = 2)
 **************************
 
-On-site anisotropy of the second order involves one magnetic site and two
-entities. Therefore, it can be expressed via the term :math:`\mathcal{H}_{2, 1}`.
+On-site anisotropy of the second order involves one site and two entities.
+Therefore, it can be expressed via the term :math:`\mathcal{H}_{2, 1}`.
 
 - :math:`k = 2`
 - :math:`l = 1`

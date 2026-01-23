@@ -395,7 +395,7 @@ Magneto-elastic interaction
     \hat{u}_n^{\gamma}
     -
     \sum_{\alpha=1,\dots,6, lm}
-    G^{\alpha\gamma}_{\text{cfph}}(n)
+    G^{\alpha,l,m}_{\text{cfph}}(n)
     \epsilon_{\alpha}
     O_{lm}(\hat{\mathbf{J}}^n)
 
@@ -408,7 +408,7 @@ and
     =
     -
     \sum_{\substack{n<n^{\prime},lm,\\\alpha=1,2,3}}
-    \Gamma^{\alpha\gamma}(nn^{\prime})
+    \Gamma^{\alpha,l,m}(nn^{\prime})
     \hat{u}_n^{\alpha}
     O_{lm}(\hat{\mathbf{J}}^{n^{\prime}})
 

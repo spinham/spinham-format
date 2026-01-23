@@ -4,8 +4,8 @@
 On-site anisotropy (k = 4)
 **************************
 
-On-site anisotropy of the fourth order involves one magnetic site and four  
-entities. Therefore, it can be expressed via the term :math:`\mathcal{H}_{4, 1}`.
+On-site anisotropy of the fourth order involves one site and four entities.
+Therefore, it can be expressed via the term :math:`\mathcal{H}_{4, 1}`.
 
 - :math:`k = 4`
 - :math:`l = 1`

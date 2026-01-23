@@ -26,13 +26,13 @@ other words, index :math:`\mu_1` runs over all cells of the lattice and for each
 value of :math:`\mu_1`, index :math:`\mu_2` also runs over all cells of the
 lattice.
 
-Second, assume that there are :math:`N` magnetic sites in each cell of the
-lattice. Label each magnetic site in the lattice with an index :math:`\alpha`
-(or :math:`\alpha_1`, :math:`\alpha_2`, and so on if more than one magnetic site
-index is required).
+Second, assume that there are :math:`N` (magnetic) sites in each cell of the
+lattice. Label each site in the lattice with an index :math:`\alpha`
+(or :math:`\alpha_1`, :math:`\alpha_2`, and so on if more than one site index is
+required).
 
-With the definitions from above, the position of an arbitrary magnetic site in
-such structure is defined by the radius vector
+With the definitions from above, the position of an arbitrary site in such
+structure is defined by the radius vector
 
 .. math::
 
@@ -51,11 +51,11 @@ for :math:`i = 1, \ldots, d` (or :math:`i = x, y, z` if :math:`d = 3`).
 In the following one shall keep in mind the usual 3D space (:math:`d = 3`).
 
 
-Magnetic sites
-==============
+(Magnetic) sites
+================
 
-Once the structure is defined, imagine that each magnetic site has an "entity"
-associated with it. Label such an entity with the capital letter :math:`X`. The
+Once the structure is defined, imagine that each site has an "entity" associated
+with it. Label such an entity with the capital letter :math:`X`. The 
 interpretation of the letter :math:`X` depends on the term of the Hamiltonian,
 which it enters. For example, it can be a spin vector, a spin operator, an
 angular momentum operator, a Stevens operator, a Wybourne operator and so on.
@@ -78,10 +78,10 @@ Common for all interpretations of the entity :math:`X` are the following propert
 
         X_{\mu; \alpha}
 
-    As each entity is associated with a magnetic site, its position is simply
-    the position of that magnetic site.
+    As each entity is associated with a site, its position is simply the
+    position of tha site.
 
--   Two entities that are associated with two distinct magnetic sites commute.
+-   Two entities that are associated with two distinct sites commute.
 
     .. math::
 
@@ -91,19 +91,19 @@ Common for all interpretations of the entity :math:`X` are the following propert
 
 In the following whether the indices :math:`(\mu_1; \alpha_1)` and
 :math:`(\mu_2; \alpha_2)` are written within the same context it is implied that
-they indicate distinct magnetic sites:
+they indicate distinct sites:
 :math:`(\mu_1; \alpha_1) \neq (\mu_2; \alpha_2)`.
 
 
 Interaction parameters
 ======================
 
-Then, an interaction between magnetic sites is described by the interaction
-parameters. Label such an interaction parameter with the capital letter
-:math:`V`. Each interaction parameter connects one or more entities, whilst
-those entities are associates with one or more magnetic sites. As with entities,
-the interpretation of the interaction parameter :math:`V` depends on the term of
-the Hamiltonian, which it enters. However, there are two common properties
+Then, an interaction between sites is described by the interaction parameters.
+Label such an interaction parameter with the capital letter :math:`V`. Each
+interaction parameter connects one or more entities, whilst those entities are
+associates with one or more sites. As with entities, the interpretation of the 
+parameter :math:`V` depends on the term of the Hamiltonian, which it enters.
+However, there are two common properties
 
 
 -   Each interaction parameter has as many independent dimensions as the number of
@@ -117,19 +117,19 @@ the Hamiltonian, which it enters. However, there are two common properties
     connects :math:`k` entities.
 
 -   Each interaction parameter depends on as many pairs of position indices
-    (cell index and magnetic site index) as the number of unique magnetic sites
-    that it connects. For example, an interaction parameter
+    (cell index and site index) as the number of unique sites that it connects.
+    For example, an interaction parameter
 
     .. math::
 
         V_{\mu_1, \mu_2, \ldots, \mu_m; \alpha_1, \alpha_2, \ldots, \alpha_m}
 
-    connects :math:`m` unique magnetic sites.
+    connects :math:`m` unique sites.
 
 .. note::
 
-    Amount of entities and the amount of unique magnetic sites can be different.
-    For example, an interaction parameter can connect two entities
+    Amount of entities and the amount of unique sites can be different. For
+    example, an interaction parameter can connect two entities
     :math:`X_{\mu_1; \alpha_1}^{i_1}` and :math:`X_{\mu_1; \alpha_1}^{i_2}` is
     denoted as
 
@@ -151,14 +151,13 @@ Terms of the Hamiltonian
 The Hamiltonian itself is constructed with the following properties in mind
 
 - Terms of the Hamiltonian can involve an arbitrary amount of entities.
-- Terms of the Hamiltonian can involve an arbitrary amount of unique magnetic
-  sites.
+- Terms of the Hamiltonian can involve an arbitrary amount of unique sites.
 - Each combination of components of the entities can have a unique
   interaction parameter associated with it.
 
 
 Consider an arbitrary term of the Hamiltonian. Let it involve :math:`m` distinct
-magnetic sites
+sites
 
 .. math::
 
@@ -176,12 +175,12 @@ and :math:`m`? The answer is
 
 -   :math:`k \ge m`.
 
-    As every entity is associated with exactly one magnetic site.
+    As every entity is associated with exactly one site.
 
 -   :math:`k \ne 0` and :math:`m \ne 0`. 
 
     If the Hamiltonian includes a term that is independent of the entities or 
-    does not involve any magnetic sites, then such a term either describes the
+    does not involve any sites, then such a term either describes the
     environment and not the system or is a constant energy term that can be
     ignored.
 
@@ -233,8 +232,7 @@ terms.
 
 Unfortunately, one can not simply classify the terms of the Hamiltonian by the
 pair :math:`(k, m)`. First counter-example occurs when :math:`k = 4`. Imagine 
-two terms that both involve :math:`k = 4` entities and :math:`m = 2` magnetic 
-sites 
+two terms that both involve :math:`k = 4` entities and :math:`m = 2` sites 
 
 .. math::
 
@@ -342,8 +340,7 @@ Therefore, the terms of the Hamiltonian can be uniquely labeled by a pair
 :math:`(k, l)`, where :math:`k` is the amount of entities and :math:`l` is 
 an index of a particular integer partition of the number :math:`k` (with
 :math:`l = 1, \ldots, p(k)`). For each such pair define a number :math:`m_{k,l}`,
-which indicates how many unique magnetic sites are involved in the term 
-:math:`(k, l)`.
+which indicates how many unique sites are involved in the term :math:`(k, l)`.
 
 .. hint::
 
@@ -395,7 +392,7 @@ which indicates how many unique magnetic sites are involved in the term
 
 Redesign a classification table by using the labels :math:`(k, l)` 
 (instead of :math:`(k, m)`). As entries of the table put the amount of distinct
-magnetic sites :math:`m_{k,l}` that are involved in the term.
+sites :math:`m_{k,l}` that are involved in the term.
 
 
 .. list-table:: 
@@ -754,9 +751,9 @@ Generalizing the examples above, one can write the general form of
 
 where :math:`n_{l, j}` indicates how many entities are associated with site
 :math:`(\mu_j; \alpha_j)` in the integer partition :math:`l` of the number
-:math:`k` and :math:`m_{k,l}` is the amount of different magnetic sites
-involved in the term that corresponds to the integer partition :math:`l` of
-the number :math:`k`.
+:math:`k` and :math:`m_{k,l}` is the amount of different sites involved in the
+term that corresponds to the integer partition :math:`l` of the number
+:math:`k`.
 
 Mapping to the general form
 ===========================
@@ -774,6 +771,7 @@ The pages below discuss the mapping of each term in detail.
     crystal-field
     dipole-dipole
     exchange-striction
+    magneto-elastic
     on-site-k2
     on-site-k4
     quadruplet-interaction
@@ -803,6 +801,7 @@ follows
     * - :math:`k = 1`
       - :ref:`mapping_crystal-field`,
         :ref:`mapping_crystal-field_ambiguity`,
+        :ref:`mapping_magneto-elastic-1-1`,
         :ref:`mapping_zeeman`
       - :math:`\times`
       - :math:`\times`
@@ -816,7 +815,8 @@ follows
         :ref:`mapping_dipole-dipole`,  
         :ref:`mapping_exchange_striction`, 
         :ref:`mapping_two-ion-crystal-field`, 
-        :ref:`mapping_two-ion-crystal-field_ambiguity`
+        :ref:`mapping_two-ion-crystal-field_ambiguity`,
+        :ref:`mapping_magneto-elastic-2-2`,
       - :math:`\times`
       - :math:`\times`
       - :math:`\times`

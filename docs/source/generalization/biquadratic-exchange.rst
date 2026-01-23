@@ -4,8 +4,8 @@
 Biquadratic exchange
 ********************
 
-Bilinear exchange involves two magnetic sites and four entities (two entities
-per site). Therefore, it can be expressed via the term :math:`\mathcal{H}_{4, 3}`.
+Bilinear exchange involves two sites and four entities (two entities per site).
+Therefore, it can be expressed via the term :math:`\mathcal{H}_{4, 3}`.
 
 - :math:`k = 4`
 - :math:`l = 3`

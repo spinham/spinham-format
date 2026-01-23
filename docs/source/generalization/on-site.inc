@@ -1,5 +1,5 @@
-On-site anisotropy terms involve one magnetic site and :math:`k` "entities". It
-should map to the terms of the Hamiltonian that can be written as
+On-site anisotropy terms involve one site and :math:`k` "entities". It should
+map to the terms of the Hamiltonian that can be written as
 
 
 .. math::
