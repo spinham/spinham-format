@@ -25,20 +25,22 @@ Motivation
 ==========
 
 A mechanism of FDPs is intended to provide a structure for the decision making
-about the format's design. It employs the principle of **"implicit agreement,
-explicit objection"**. As a consequence, the explicit agreement of every member
-of the organization is not required to introduce a new design principle. Instead,
-if there are any objections, they are expected to be voiced explicitly during 
-any stage of the FDP's lifetime before its acceptance.
+about the format's design. It is based on the principle of **"implicit
+agreement, explicit objection"**.
 
-This principle is aimed to promote the participation in the design and to avoid
-the overrefining of the formal procedures for the decision making.
+This principle is aimed to promote the active participation in the design and to
+facilitate the progress of the format.
+
+As a consequence, the explicit agreement of every member of the organization is
+not required to introduce a new design principle. Instead, if there are any
+objections, they are expected to be voiced explicitly at any stage before
+FDP's acceptance.
 
 To ensure that the design principles are not introduced without proper
 consideration, the mechanism of notifying all members of the organization about 
-the cornerstone stages of the FDP's lifetime is desired. 
+the cornerstone stages of the FDP's lifetime is desired.
 
-There are three key types of notification that are mandatory:
+There are three types of mandatory notifications
 
 * Notification about the proposal of a new FDP.
 * Notification about the call for acceptance of an FDP.
