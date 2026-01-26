@@ -21,6 +21,37 @@ It is an UTF-8 coded text file written with the |reStructuredText|_ that follows
 the :ref:`fdp-template`. A plain text file can be proposed as well, in that case
 the Maintainer is responsible for converting it to the |reStructuredText|_.
 
+Motivation
+==========
+
+A mechanism of FDPs is intended to provide a structure for the decision making
+about the format's design. It is based on the principle of **"implicit
+agreement, explicit objection"**.
+
+This principle is aimed to promote the active participation in the design and to
+facilitate the progress of the format.
+
+As a consequence, the explicit agreement of every member of the organization is
+not required to introduce a new design principle. Instead, if there are any
+objections, they are expected to be voiced explicitly at any stage before
+FDP's acceptance.
+
+To ensure that the design principles are not introduced without proper
+consideration, the mechanism of notifying all members of the organization about 
+the cornerstone stages of the FDP's lifetime is desired.
+
+There are three types of mandatory notifications
+
+* Notification about the proposal of a new FDP.
+* Notification about the call for acceptance of an FDP.
+* Notification about the resolution of the acceptance call (i.e. whether FDP is
+  accepted or discussion continues due to newly raised questions).
+
+Moreover, to ensure the transparency of the decision making process, all
+discussions are expected to be held in the FDP's issue, all modifications of the 
+FDP's source are recorded in history of the git repository and the mandatory
+waiting period (of at least 7 days) after each call for acceptance is introduced.
+
 
 Header
 ======
@@ -40,7 +71,8 @@ Workflow
 ========
 
 It is recommended to discuss the idea of FDP in the topical issue or issues
-before proposing the formal FDP document.
+before proposing the formal FDP document. Once the draft of an FDP is proposed, 
+it will be recorded in history, regardless of its final status.
 
 Each FDP proposal should have a responsible person — *the Manager* — who will
 submit a PR and will be responsible for shepherding the discussion, addressing
@@ -50,11 +82,12 @@ If an FDP has a single author, then that author is considered to be the Manager.
 If an FDP has multiple authors, then they should choose a single Manager amongst
 themselves and list that person in the "Manager" field of the FDP header.
 
-The possible evolution of the FDP status is described below
+The possible evolution of the FDP status is summarised in the figure below
 
 .. figure:: lifetime.png
     :target: ../_images/lifetime.png
     :align: center
+    :alt: FDP lifetime diagram
 
 Proposal
 --------
@@ -69,6 +102,9 @@ All initial proposals should have the "Draft" status.
 At the earliest convenience the PR should be merged by the Maintainer regardless
 of the state of the discussion. New PRs can be created by the Manager to update
 the FDP or by the Maintainer to set its status, update format, etc.
+
+The Maintainer is responsible for issuing a notification to all members of the
+organization about the proposal of a new FDP. 
 
 Discussion and review
 ---------------------
@@ -88,7 +124,7 @@ Accepted
 --------
 
 When the consensus is reached, the Maintainer, at request of the Manager, should
-notify all members stating that the FDP is ready and will be merged unless
+notify all members stating that the FDP is ready and will be ``Accepted`` unless
 objections are raised within 7 days. If no objections are raised within that
 period, then the FDP becomes ``Accepted``. Period of 7 days can be extended by
 the Manager, in that case the duration shall be communicated in the

@@ -296,6 +296,32 @@ principle of the spin Hamiltonian format.</p>
 the <a class="reference internal" href="fdp-template.html#fdp-template"><span class="std std-ref">FDP XX — Template</span></a>. A plain text file can be proposed as well, in that case
 the Maintainer is responsible for converting it to the <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>.</p>
 </section>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">¶</a></h2>
+<p>A mechanism of FDPs is intended to provide a structure for the decision making
+about the format's design. It is based on the principle of <strong>&quot;implicit
+agreement, explicit objection&quot;</strong>.</p>
+<p>This principle is aimed to promote the active participation in the design and to
+facilitate the progress of the format.</p>
+<p>As a consequence, the explicit agreement of every member of the organization is
+not required to introduce a new design principle. Instead, if there are any
+objections, they are expected to be voiced explicitly at any stage before
+FDP's acceptance.</p>
+<p>To ensure that the design principles are not introduced without proper
+consideration, the mechanism of notifying all members of the organization about
+the cornerstone stages of the FDP's lifetime is desired.</p>
+<p>There are three types of mandatory notifications</p>
+<ul class="simple">
+<li><p>Notification about the proposal of a new FDP.</p></li>
+<li><p>Notification about the call for acceptance of an FDP.</p></li>
+<li><p>Notification about the resolution of the acceptance call (i.e. whether FDP is
+accepted or discussion continues due to newly raised questions).</p></li>
+</ul>
+<p>Moreover, to ensure the transparency of the decision making process, all
+discussions are expected to be held in the FDP's issue, all modifications of the
+FDP's source are recorded in history of the git repository and the mandatory
+waiting period (of at least 7 days) after each call for acceptance is introduced.</p>
+</section>
 <section id="header">
 <h2>Header<a class="headerlink" href="#header" title="Link to this heading">¶</a></h2>
 <p>Each FDP should start with a preamble, that shall include the following
@@ -313,16 +339,17 @@ mandatory fields</p>
 <section id="workflow">
 <h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">¶</a></h2>
 <p>It is recommended to discuss the idea of FDP in the topical issue or issues
-before proposing the formal FDP document.</p>
+before proposing the formal FDP document. Once the draft of an FDP is proposed,
+it will be recorded in history, regardless of its final status.</p>
 <p>Each FDP proposal should have a responsible person — <em>the Manager</em> — who will
 submit a PR and will be responsible for shepherding the discussion, addressing
 comments, and updating the document as needed.</p>
 <p>If an FDP has a single author, then that author is considered to be the Manager.
 If an FDP has multiple authors, then they should choose a single Manager amongst
 themselves and list that person in the &quot;Manager&quot; field of the FDP header.</p>
-<p>The possible evolution of the FDP status is described below</p>
+<p>The possible evolution of the FDP status is summarised in the figure below</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../_images/lifetime.png"><img alt="../_images/lifetime.png" src="../_images/lifetime.png" />
+<a class="reference external image-reference" href="../_images/lifetime.png"><img alt="FDP lifetime diagram" src="../_images/lifetime.png" />
 </a>
 </figure>
 <section id="proposal">
@@ -336,6 +363,8 @@ All initial proposals should have the &quot;Draft&quot; status.</p>
 <p>At the earliest convenience the PR should be merged by the Maintainer regardless
 of the state of the discussion. New PRs can be created by the Manager to update
 the FDP or by the Maintainer to set its status, update format, etc.</p>
+<p>The Maintainer is responsible for issuing a notification to all members of the
+organization about the proposal of a new FDP.</p>
 </section>
 <section id="discussion-and-review">
 <h3>Discussion and review<a class="headerlink" href="#discussion-and-review" title="Link to this heading">¶</a></h3>
@@ -352,7 +381,7 @@ no progress is made made on the FDP.</p>
 <section id="accepted">
 <h3>Accepted<a class="headerlink" href="#accepted" title="Link to this heading">¶</a></h3>
 <p>When the consensus is reached, the Maintainer, at request of the Manager, should
-notify all members stating that the FDP is ready and will be merged unless
+notify all members stating that the FDP is ready and will be <code class="docutils literal notranslate"><span class="pre">Accepted</span></code> unless
 objections are raised within 7 days. If no objections are raised within that
 period, then the FDP becomes <code class="docutils literal notranslate"><span class="pre">Accepted</span></code>. Period of 7 days can be extended by
 the Manager, in that case the duration shall be communicated in the
@@ -442,6 +471,7 @@ the Manager or the Maintainer only if the discussion becomes stale.</p>
             <ul>
 <li><a class="reference internal" href="#">FDP 0 — How to write an FDP</a><ul>
 <li><a class="reference internal" href="#what-is-a-fdp">What is a FDP?</a></li>
+<li><a class="reference internal" href="#motivation">Motivation</a></li>
 <li><a class="reference internal" href="#header">Header</a></li>
 <li><a class="reference internal" href="#workflow">Workflow</a><ul>
 <li><a class="reference internal" href="#proposal">Proposal</a></li>
