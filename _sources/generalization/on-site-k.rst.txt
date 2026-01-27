@@ -27,4 +27,5 @@ In :ref:`zoo_spirit`, the on-site anisotropy term is written as
   \end{alignedat}
     
 
-#TODO (mapping is possible, but the form of the Hamiltonian is unclear at the moment)
+#TODO (mapping is possible, but the interpretation of the original Hamiltonian is unclear
+at the moment)

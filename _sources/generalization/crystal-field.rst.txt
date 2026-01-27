@@ -58,7 +58,7 @@ The summary of the mapping for each code is given in the table below.
         - :math:`n \rightarrow (\mu_1, \alpha_1)`, :math:`(l,m) \rightarrow i_1`
         - :math:`n \rightarrow (\mu_1, \alpha_1)`, :math:`(l,m) \rightarrow i_1`
         - :math:`i \rightarrow (\mu_1, \alpha_1)`, :math:`(k,q) \rightarrow i_1`
-    *   - :math:`C_{4, 3}`
+    *   - :math:`C_{1, 1}`
         - 1
         - 1
         - 1
@@ -122,7 +122,7 @@ the non-constant part as
     \sum_{\mu_1, \alpha_1, i_1, i_2}
     V_{\mu_1; \alpha_1}^{i_1, i_2}
     X_{\mu_1; \alpha_1}^{i_1}
-    X_{\mu_1; \alpha_1}^{i_1}
+    X_{\mu_1; \alpha_1}^{i_2}
 
 where 
 
