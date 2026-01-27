@@ -18,6 +18,7 @@ Spin Hamiltonian format
     fdp/index
     spinham-zoo/index
     generalization/index
+    generalization-2/index
 
 Workflow
 ========
