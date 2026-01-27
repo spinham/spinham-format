@@ -1,8 +1,8 @@
 .. _generalization:
 
-*************************
-Attempt at generalization
-*************************
+******************************
+Attempt at generalization (#1)
+******************************
 
 
 Structure
