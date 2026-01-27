@@ -1,23 +1,19 @@
-.. _mapping_crystal-field:
+.. _mapping-2_crystal-field:
 
 *************
 Crystal field
 *************
 
-Crystal field terms involve one site and either one or :math:`k` entities
+Crystal field terms involve either one or :math:`k` entities
 (depending on the mapping procedure choice). Consider case with one entity as a
 preferred mapping scheme. Then, it can be expressed via the term
-:math:`\mathcal{H}_{1, 1}`.
-
-- :math:`k = 1`
-- :math:`l = 1`
-- :math:`m_{1,1} = 1`
+:math:`\mathcal{H}_1`.
 
 .. math::
 
-    \mathcal{H}_{1,1}
+    \mathcal{H}_1
     =
-    C_{1, 1}
+    C_1
     \sum_{\mu_1, \alpha_1, i_1}
     V_{\mu_1; \alpha_1}^{i_1}
     X_{\mu_1; \alpha_1}^{i_1}
@@ -58,7 +54,7 @@ The summary of the mapping for each code is given in the table below.
         - :math:`n \rightarrow (\mu_1, \alpha_1)`, :math:`(l,m) \rightarrow i_1`
         - :math:`n \rightarrow (\mu_1, \alpha_1)`, :math:`(l,m) \rightarrow i_1`
         - :math:`i \rightarrow (\mu_1, \alpha_1)`, :math:`(k,q) \rightarrow i_1`
-    *   - :math:`C_{1, 1}`
+    *   - :math:`C_1`
         - 1
         - 1
         - 1
@@ -77,8 +73,6 @@ The summary of the mapping for each code is given in the table below.
         of the sets of two integers. Therefore, they can be enumerated with a  
         single integer and mapped to the index :math:`i_1`.
        
-.. _mapping_crystal-field_ambiguity:
-
 Crystal field (ambiguity)
 -------------------------
 
@@ -118,26 +112,29 @@ the non-constant part as
 
     \mathcal{H}
     =
-    C_{2,1}
-    \sum_{\mu_1, \alpha_1, i_1, i_2}
-    V_{\mu_1; \alpha_1}^{i_1, i_2}
+    C_2
+    \sum_{\mu_1, \mu_2, \alpha_1, \alpha_2, i_1, i_2}
+    V_{\mu_1, \mu_2; \alpha_1, \alpha_2}^{i_1, i_2}
     X_{\mu_1; \alpha_1}^{i_1}
-    X_{\mu_1; \alpha_1}^{i_2}
+    X_{\mu_2; \alpha_2}^{i_2}
 
 where 
 
 .. math::
 
-    C_{2,1} &= 1
+    C_2 &= 1
     \\
-    V_{\mu_1; \alpha_1} &= 
+    V_{\mu_1, \mu_2; \alpha_1, \alpha_2} &= 
+    \delta_{\mu_1, \mu_2} \delta_{\alpha_1, \alpha_2}
     \begin{pmatrix}
         0 & 0 & 0 \\
         0 & 0 & 0 \\
         0 & 0 & 3B_2^0
     \end{pmatrix}
     \\
-    X_{\mu_1; \alpha_1}^{i} &= \hat{J}_{i_1}^{\mu_1, \alpha_1}
+    X_{\mu_1; \alpha_1}^{i_1} &= \hat{J}_{i_1}^{\mu_1, \alpha_1}
+    \\
+    X_{\mu_2; \alpha_2}^{i_2} &= \hat{J}_{i_2}^{\mu_2, \alpha_2}
 
 
 

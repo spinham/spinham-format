@@ -1,10 +1,9 @@
-.. _mapping_on-site-k:
+.. _mapping-2_on-site-k:
 
 **********************
 On-site anisotropy (k)
 **********************
 
-.. include:: on-site.inc
 
 Contributions to the term with :math:`k = 1` are discussed in
 :ref:`mapping_zeeman`, with :math:`k = 2` in :ref:`mapping_on-site-k2`, 
