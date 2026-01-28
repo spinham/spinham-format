@@ -68,7 +68,7 @@ Common for all interpretations of the entity :math:`X` are the following propert
 
         X^{i}
 
-    where :math:`i` runs from :math:`1` to :math:`n`. In the simpliest case those
+    where :math:`i` runs from :math:`1` to :math:`n`. In the simplest case those
     are Cartesian components (:math:`i = x, y, z`). However, in some cases those
     can have different meaning.
 

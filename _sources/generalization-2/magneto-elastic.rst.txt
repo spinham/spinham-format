@@ -33,6 +33,11 @@ The summary of the mapping for two terms is given in the tables below.
 Magneto-elastic interaction (1)
 ===============================
 
+.. warning::
+
+    This is wrong, the mapping can not be performed in the formalism of the 
+    attempt #2. See attempt #3, there this problem is resolved.
+
 .. list-table::
     :header-rows: 1
     :stub-columns: 1
