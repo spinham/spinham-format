@@ -4,6 +4,11 @@
 Exchange striction
 ******************
 
+.. warning::
+
+    This is wrong, the mapping can not be performed in the formalism of the 
+    attempt #1. See attempt #3, there this problem is resolved.
+
 Exchange striction involves two sites and two entities. Therefore, it can be
 expressed via the term :math:`\mathcal{H}_{2, 2}`.
 

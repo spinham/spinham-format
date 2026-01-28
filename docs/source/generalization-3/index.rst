@@ -1,7 +1,7 @@
-.. _generalization-2:
+.. _generalization-3:
 
 ******************************
-Attempt at generalization (#2)
+Attempt at generalization (#3)
 ******************************
 
 
@@ -81,11 +81,40 @@ Common for all interpretations of the entity :math:`X` are the following propert
     As each entity is associated with a site, its position is simply the
     position of tha site.
 
--   Two entities that are associated with two distinct sites commute.
+Other entities
+==============
+
+In addition to the entities associated with the magnetic sites, introduce a
+separate typo of entity that have no dependency on the site indices (for example,
+external magnetic field or strain tensor). Label such an entity with the capital
+letter :math:`Y`. 
+
+Common for all interpretations of the entity :math:`Y` are the following properties
+
+-   Each entity have :math:`m` components.
 
     .. math::
 
-        [X_{\mu_1; \alpha_1}^{i_1}, X_{\mu_2; \alpha_2}^{i_2}] = \delta_{(\mu_1; \alpha_1), (\mu_2; \alpha_2)}
+        Y^{j}
+
+    where :math:`j` runs from :math:`1` to :math:`m`. In the simplest case those
+    are Cartesian components (:math:`j = x, y, z`). However, in some cases those
+    can have different meaning.
+
+-   Each entity has a **label** (no an index). The meaning of that label depends
+    on the interpretation of the entity :math:`Y`. The purpose of that label is
+    to distinguish between multiple entities of the same type. An integer 
+    number is a good choice for such label.
+
+    .. math::
+
+        Y_1
+
+.. note::
+
+    Key difference between entities of type :math:`X` and :math:`Y` is that 
+    a summation over the site indices for entities of type :math:`X` is assumed,
+    while no summation over the labels for entities of type :math:`Y` is allowed.
 
 
 Interaction parameters
@@ -93,10 +122,9 @@ Interaction parameters
 
 Then, an interaction between sites is described by the interaction parameters.
 Label such an interaction parameter with the capital letter :math:`V`. Each
-interaction parameter connects one or more entities, whilst those entities are
-associates with one or more sites. As with entities, the interpretation of the 
-parameter :math:`V` depends on the term of the Hamiltonian, which it enters.
-However, there are two common properties
+interaction parameter connects one or more entities of arbitrary type. As with
+entities, the interpretation of the parameter :math:`V` depends on the term of
+the Hamiltonian, which it enters. However, there are two common properties
 
 
 -   Each interaction parameter has as many independent dimensions as the number of
@@ -105,18 +133,21 @@ However, there are two common properties
 
     .. math::
 
-        V^{i_1, i_2, \ldots, i_k}
+        V^{j_1, j_2, \ldots, j_l, i_1, i_2, \ldots, i_k}
 
-    connects :math:`k` entities.
+    connects :math:`l` entities of the type :math:`Y` and :math:`k` entities of
+    the type :math:`X`.
 
--   Each interaction parameter depends on as many pairs of position indices as
-    the number of entities it connects.
+-   Each interaction parameter depends on as many pairs of position indices 
+    and/or labels as the number of entities it connects.
 
     .. math::
 
-        V_{\mu_1, \mu_2, \ldots, \mu_m; \alpha_1, \alpha_2, \ldots, \alpha_k}
+        V_{1, 2, \ldots, l; \mu_1, \mu_2, \ldots, \mu_m; \alpha_1, \alpha_2, \ldots, \alpha_k}
 
-    connects :math:`k`  sites.
+    connects :math:`l` sites of the type :math:`Y` and :math:`k` sites of the type
+    :math:`X`.
+
 
 Terms of the Hamiltonian
 ========================
@@ -126,6 +157,8 @@ The Hamiltonian itself is constructed with the following properties in mind
 - Terms of the Hamiltonian can involve an arbitrary amount of entities.
 - Each combination of components of the entities can have a unique
   interaction parameter associated with it.
+- Entities of the type :math:`Y` are always written to the left of the entities
+  of the type :math:`X` in each term of the Hamiltonian.
 
 
 Consider an arbitrary term of the Hamiltonian. Let it involve :math:`k` sites
@@ -143,25 +176,37 @@ Each site has an entity associated with it
     \ldots,
     X_{\mu_k; \alpha_k}^{i_k}
 
+In addition, let it involve :math:`l` entities of the type :math:`Y`
+
+.. math::
+    Y_{1}^{j_1},
+    Y_{2}^{j_2},
+    \ldots,
+    Y_{l}^{j_l}
+
 Then, the interaction parameter that connects those entities is labeled as
 
 .. math::
 
-    V_{\mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{i_1, \ldots, i_k}
+    V_{1, 2, \ldots, l; \mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{j_1, \ldots, j_l, i_1, \ldots, i_k}
 
-Then the term of the Hamiltonian that involves those entities is written as
+and the term of the Hamiltonian that involves those entities is written as
 
 .. math::
 
     \mathcal{H}_k
     =
-    C_k
-    \sum_{\substack{\mu_1, \ldots, \mu_k, \\ \alpha_1, \ldots, \alpha_k, \\ i_1, \ldots, i_k}}
-    V_{\mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{i_1, \ldots, i_k}
+    C_{l, k}
+    \sum_{\substack{\mu_1, \ldots, \mu_k, \\ \alpha_1, \ldots, \alpha_k, \\ j_1, \ldots, j_l, \\i_1, \ldots, i_k}}
+    V_{1, 2, \ldots, l; \mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{j_1, \ldots, j_l, i_1, \ldots, i_k}
+    \cdot
+    Y_{1}^{j_1}
+    \cdot
+    \ldots
+    \cdot
+    Y_{l}^{j_l}
     \cdot
     X_{\mu_1; \alpha_1}^{i_1}
-    \cdot
-    X_{\mu_2; \alpha_2}^{i_2}
     \cdot
     \ldots
     \cdot
@@ -187,21 +232,34 @@ all possible terms of the form from above
 
     \mathcal{H}
     =
+    \sum_{l=1}^{\infty}
     \sum_{k=1}^{\infty}
-    \mathcal{H}_k
+    \mathcal{H}_{l, k}
     =
-    \sum_{k=1}^{\infty}
-    C_k
-    \sum_{\substack{\mu_1, \ldots, \mu_k, \\ \alpha_1, \ldots, \alpha_k, \\ i_1, \ldots, i_k}}
-    V_{\mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{i_1, \ldots, i_k}
+    C_{l, k}
+    \sum_{\substack{\mu_1, \ldots, \mu_k, \\ \alpha_1, \ldots, \alpha_k, \\ j_1, \ldots, j_l, \\i_1, \ldots, i_k}}
+    V_{1, 2, \ldots, l; \mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{j_1, \ldots, j_l, i_1, \ldots, i_k}
+    \cdot
+    Y_{1}^{j_1}
+    \cdot
+    \ldots
+    \cdot
+    Y_{l}^{j_l}
     \cdot
     X_{\mu_1; \alpha_1}^{i_1}
-    \cdot
-    X_{\mu_2; \alpha_2}^{i_2}
     \cdot
     \ldots
     \cdot
     X_{\mu_k; \alpha_k}^{i_k}
+
+.. note::
+
+    By convention, the entities of the type :math:`Y` are always written to the
+    left of the entities of the type :math:`X` in each term of the Hamiltonian.
+    Moreover, the labels and component indices of the entities of the type
+    :math:`Y` are always written to the left of the position indices and
+    component indices of the entities of the type :math:`X` in the interaction
+    parameters.
 
 
 Mapping to the general form
@@ -231,3 +289,48 @@ The pages below discuss the mapping of each term in detail.
     :maxdepth: 1
 
     on-site-k
+
+Below is the table that classifies the terms in the matrix of :math:`(l, k)`.
+
+
+
+.. list-table:: 
+    :header-rows: 1
+    :stub-columns: 1
+    :widths: 10 45 35 10
+
+    *   - 
+        - :math:`l = 0`
+        - :math:`l = 1`
+        - :math:`\ldots`
+    *   - :math:`k = 0`
+        - 
+        - 
+        - 
+    *   - :math:`k = 1`
+        - :ref:`mapping-3_crystal-field`
+        - :ref:`mapping-3_magneto-elastic-1`,
+          :ref:`mapping-3_zeeman`
+        - :math:`\ldots`
+    *   - :math:`k = 2`
+        - :ref:`mapping-3_bilinear-exchange`,
+          :ref:`mapping-3_dipole-dipole`,
+          :ref:`mapping-3_magneto-elastic-2`,
+          :ref:`mapping-3_on-site-k2`,
+          :ref:`mapping-3_two-ion-crystal-field`
+        - :ref:`mapping-3_exchange_striction`
+        - :math:`\ldots`
+    *   - :math:`k = 3`
+        -
+        -
+        - :math:`\ldots`
+    *   - :math:`k = 4`
+        - :ref:`mapping-3_biquadratic-exchange`,
+          :ref:`mapping-3_on-site-k4`,
+          :ref:`mapping-3_quadruplet`
+        -
+        - :math:`\ldots`
+    *   - :math:`\ldots`
+        - :math:`\ldots`
+        - :math:`\ldots`
+        - :math:`\ldots`
