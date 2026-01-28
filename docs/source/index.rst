@@ -19,6 +19,7 @@ Spin Hamiltonian format
     spinham-zoo/index
     generalization/index
     generalization-2/index
+    generalization-3/index
 
 Workflow
 ========
