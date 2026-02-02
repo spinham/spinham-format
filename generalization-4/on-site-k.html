@@ -318,8 +318,6 @@
 <a class="reference internal" href="../generalization/zeeman.html#mapping-zeeman"><span class="std std-ref">Zeeman interaction</span></a>, with <span class="math notranslate nohighlight">\(k = 2\)</span> in <a class="reference internal" href="../generalization/on-site-k2.html#mapping-on-site-k2"><span class="std std-ref">On-site anisotropy (k = 2)</span></a>,
 with <span class="math notranslate nohighlight">\(k = 4\)</span> in <a class="reference internal" href="../generalization/on-site-k4.html#mapping-on-site-k4"><span class="std std-ref">On-site anisotropy (k = 4)</span></a>.</p>
 <p>In this page we discuss the term with arbitrary <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<section id="spirit">
-<h2>Spirit<a class="headerlink" href="#spirit" title="Link to this heading">¶</a></h2>
 <p>In <a class="reference internal" href="../spinham-zoo/spirit.html#zoo-spirit"><span class="std std-ref">Spirit</span></a>, the on-site anisotropy term is written as</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
@@ -329,8 +327,51 @@ with <span class="math notranslate nohighlight">\(k = 4\)</span> in <a class="re
                   &amp; =                  \sum_{j} \sum_{n_1,n_2,n_3} K_j^{(n_1, n_2, n_3)} \cdot [\sin(\theta_j)]^{2n_1 + n_2 + n_3} \cdot [\cos(\varphi_j)]^{n_2} \cdot [\sin(\varphi_j)]^{n_3},                                          \\
 \end{alignedat}\end{split}\]</div>
 </div>
-<p>#TODO (mapping is possible, but the interpretation of the original Hamiltonian is unclear
-at the moment)</p>
+<p>This term can be mapped to the general form in different ways.</p>
+<section id="strategy-1">
+<h2>Strategy #1<a class="headerlink" href="#strategy-1" title="Link to this heading">¶</a></h2>
+<p>This strategy maps the term to the <span class="math notranslate nohighlight">\(\mathcal{H}_3\)</span> term of the general
+form.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathcal{H}_3
+=
+C_3
+\sum_{\mu_1, \mu_2, \mu_3, \alpha_1, \alpha_2, \alpha_3, i_1, i_2, i_3}
+V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3}
+X_{\mu_1, \alpha_1}^{i_1}
+X_{\mu_2, \alpha_2}^{i_2}
+X_{\mu_3, \alpha_3}^{i_3}\]</div>
+</div>
+<p>First rename the index <span class="math notranslate nohighlight">\(j \rightarrow (\mu, \alpha)\)</span>, then define three
+entities</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}X_{\mu, \alpha}^{i_1}
+&amp;=
+(1 - (\hat{K}_{\mu, \alpha}^{(1)}\cdot\vec{n}_{\mu, \alpha})^2)^{i_1}
+\\
+X_{\mu, \alpha}^{i_2}
+&amp;=
+(\hat{K}_{\mu, \alpha}^{(2)}\cdot\vec{n}_{\mu, \alpha})^{i_2}
+\\
+X_{\mu, \alpha}^{i_3}
+&amp;=
+((\hat{K}_{\mu, \alpha}^{(1)} \times \hat{K}_{\mu, \alpha}^{(2)} ) \cdot\vec{n}_{\mu, \alpha})^{i_3}\end{split}\]</div>
+</div>
+<p>where component indices <span class="math notranslate nohighlight">\(i_1, i_2, i_3\)</span> assume the same integer values as
+<span class="math notranslate nohighlight">\(n_1, n_2, n_3\)</span> respectively. Then the interaction parameter can be
+defined as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[V_{\mu_1, \mu_2, \mu_3; \alpha_1, \alpha_2, \alpha_3}^{i_1, i_2, i_3}
+=
+\delta_{\mu_1, \mu_2}
+\delta_{\mu_1, \mu_3}
+\delta_{\alpha_1, \alpha_2}
+\delta_{\alpha_1, \alpha_3}
+K_{\mu_1, \alpha_1}^{(i_1, i_2, i_3)}\]</div>
+</div>
 </section>
 </section>
 
@@ -382,7 +423,7 @@ at the moment)</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">On-site anisotropy (k)</a><ul>
-<li><a class="reference internal" href="#spirit">Spirit</a></li>
+<li><a class="reference internal" href="#strategy-1">Strategy #1</a></li>
 </ul>
 </li>
 </ul>
