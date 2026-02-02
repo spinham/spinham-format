@@ -85,7 +85,7 @@ Other entities
 ==============
 
 In addition to the entities associated with the magnetic sites, introduce a
-separate typo of entity that have no dependency on the site indices (for example,
+separate type of entity that have no dependency on the site indices (for example,
 external magnetic field or strain tensor). Label such an entity with the capital
 letter :math:`Y`. 
 

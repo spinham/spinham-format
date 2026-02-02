@@ -20,6 +20,7 @@ Spin Hamiltonian format
     generalization/index
     generalization-2/index
     generalization-3/index
+    generalization-4/index
 
 Workflow
 ========

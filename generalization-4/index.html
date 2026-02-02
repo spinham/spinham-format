@@ -1,0 +1,642 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Bilinear exchange" href="bilinear-exchange.html"><link rel="prev" title="On-site anisotropy (k)" href="../generalization-3/on-site-k.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Attempt at generalization (#4) - Spinham format</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Spinham format</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">Spinham format</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fdp/index.html">Design principles</a><input aria-label="Toggle navigation of Design principles" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fdp/fdp-0.html">FDP 0 — How to write an FDP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fdp/fdp-template.html">FDP XX — Template</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../spinham-zoo/index.html">Zoo of Hamiltonians</a><input aria-label="Toggle navigation of Zoo of Hamiltonians" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/espins.html">EspinS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/grogu.html">GROGU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/jukkr.html">juKKR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/magnopy.html">Magnopy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/magpie.html">Magpie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/mcphase.html">McPhase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/questaal.html">QUESTAAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/spinw.html">SpinW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/spirit.html">Spirit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/sunny.html">Sunny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/tb2j.html">TB2J</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/uppasd.html">UppASD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spinham-zoo/vampire.html">Vampire</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../generalization/index.html">Attempt at generalization (#1)</a><input aria-label="Toggle navigation of Attempt at generalization (#1)" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/bilinear-exchange.html">Bilinear exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/biquadratic-exchange.html">Biquadratic exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/crystal-field.html">Crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/exchange-striction.html">Exchange striction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/magneto-elastic.html">Magneto-elastic interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/on-site-k2.html">On-site anisotropy (k = 2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/on-site-k4.html">On-site anisotropy (k = 4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/quadruplet-interaction.html">Quadruplet interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/two-ion-crystal-field.html">Two-ion crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/zeeman.html">Zeeman interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization/on-site-k.html">On-site anisotropy (k)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../generalization-2/index.html">Attempt at generalization (#2)</a><input aria-label="Toggle navigation of Attempt at generalization (#2)" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/bilinear-exchange.html">Bilinear exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/biquadratic-exchange.html">Biquadratic exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/crystal-field.html">Crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/exchange-striction.html">Exchange striction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/magneto-elastic.html">Magneto-elastic interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/on-site-k2.html">On-site anisotropy (k = 2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/on-site-k4.html">On-site anisotropy (k = 4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/quadruplet-interaction.html">Quadruplet interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/two-ion-crystal-field.html">Two-ion crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/zeeman.html">Zeeman interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-2/on-site-k.html">On-site anisotropy (k)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../generalization-3/index.html">Attempt at generalization (#3)</a><input aria-label="Toggle navigation of Attempt at generalization (#3)" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/bilinear-exchange.html">Bilinear exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/biquadratic-exchange.html">Biquadratic exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/crystal-field.html">Crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/exchange-striction.html">Exchange striction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/magneto-elastic.html">Magneto-elastic interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/on-site-k2.html">On-site anisotropy (k = 2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/on-site-k4.html">On-site anisotropy (k = 4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/quadruplet-interaction.html">Quadruplet interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/two-ion-crystal-field.html">Two-ion crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/zeeman.html">Zeeman interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../generalization-3/on-site-k.html">On-site anisotropy (k)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Attempt at generalization (#4)</a><input aria-label="Toggle navigation of Attempt at generalization (#4)" checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="bilinear-exchange.html">Bilinear exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biquadratic-exchange.html">Biquadratic exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal-field.html">Crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elastic-energy.html">Elastic energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exchange-striction.html">Exchange striction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magneto-elastic.html">Magneto-elastic interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-site-k2.html">On-site anisotropy (k = 2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-site-k4.html">On-site anisotropy (k = 4)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quadruplet-interaction.html">Quadruplet interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="two-ion-crystal-field.html">Two-ion crystal field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zeeman.html">Zeeman interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="on-site-k.html">On-site anisotropy (k)</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/generalization-4/index.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="attempt-at-generalization-4">
+<span id="generalization-4"></span><h1>Attempt at generalization (#4)<a class="headerlink" href="#attempt-at-generalization-4" title="Link to this heading">¶</a></h1>
+<section id="crystal-structure">
+<h2>(Crystal) structure<a class="headerlink" href="#crystal-structure" title="Link to this heading">¶</a></h2>
+<p>A Hamiltonian is defined on a real-space structure (i. e. crystal, lattice,
+molecule, ion, etc.). A natural first step is to formally describe such
+structure.</p>
+<p>First, imagine an arbitrary periodic lattice in d-dimensions, defined by the
+<span class="math notranslate nohighlight">\(d\)</span> lattice vectors <span class="math notranslate nohighlight">\(\mathbf{a}_1, \mathbf{a}_2, \ldots, \mathbf{a}_d\)</span>.
+Label the cells of such lattice with the subscript indices <span class="math notranslate nohighlight">\(\mu\)</span> (or
+<span class="math notranslate nohighlight">\(\mu_1\)</span>, <span class="math notranslate nohighlight">\(\mu_2\)</span>, and so on if more than one cell index is
+required). In such way, the sum of the form</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{\mu_1, \mu_2} \ldots\]</div>
+</div>
+<p>indicates that its argument is summed over all cells of the lattice twice. In
+other words, index <span class="math notranslate nohighlight">\(\mu_1\)</span> runs over all cells of the lattice and for each
+value of <span class="math notranslate nohighlight">\(\mu_1\)</span>, index <span class="math notranslate nohighlight">\(\mu_2\)</span> also runs over all cells of the
+lattice.</p>
+<p>Second, assume that there are <span class="math notranslate nohighlight">\(N\)</span> (magnetic) sites in each cell of the
+lattice. Label each site in the lattice with an index <span class="math notranslate nohighlight">\(\alpha\)</span>
+(or <span class="math notranslate nohighlight">\(\alpha_1\)</span>, <span class="math notranslate nohighlight">\(\alpha_2\)</span>, and so on if more than one site index is
+required).</p>
+<p>With the definitions from above, the position of an arbitrary site in such
+structure is defined by the radius vector</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\mathbf{r}_{\mu; \alpha} = \mathbf{r}_{\mu} + \mathbf{r}_{\alpha}\]</div>
+</div>
+<p>Finally, the cartesian components are denoted with the superscript indices
+<span class="math notranslate nohighlight">\(i\)</span> (or <span class="math notranslate nohighlight">\(i_1\)</span>, <span class="math notranslate nohighlight">\(i_2\)</span>, and so on if more than one Cartesian
+component index is required).</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[r_{\mu; \alpha}^{i} = r_{\mu}^{i} + r_{\alpha}^{i}\]</div>
+</div>
+<p>for <span class="math notranslate nohighlight">\(i = 1, \ldots, d\)</span> (or <span class="math notranslate nohighlight">\(i = x, y, z\)</span> if <span class="math notranslate nohighlight">\(d = 3\)</span>).</p>
+<p>In the following one shall keep in mind the usual 3D space (<span class="math notranslate nohighlight">\(d = 3\)</span>).</p>
+</section>
+<section id="magnetic-sites">
+<h2>(Magnetic) sites<a class="headerlink" href="#magnetic-sites" title="Link to this heading">¶</a></h2>
+<p>Once the structure is defined, imagine that each site has an &quot;entity&quot; associated
+with it. Label such an entity with the capital letter <span class="math notranslate nohighlight">\(X\)</span>. The
+interpretation of the letter <span class="math notranslate nohighlight">\(X\)</span> depends on the term of the Hamiltonian,
+which it enters. For example, it can be a spin vector, a spin operator, an
+angular momentum operator, a Stevens operator, a Wybourne operator, an external
+magnetic field and so on.</p>
+<p>Common for all interpretations of the entity <span class="math notranslate nohighlight">\(X\)</span> are the following properties</p>
+<ul>
+<li><p>Each entity have <span class="math notranslate nohighlight">\(n\)</span> components.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[X^{i}\]</div>
+</div>
+<p>where <span class="math notranslate nohighlight">\(i\)</span> runs from <span class="math notranslate nohighlight">\(1\)</span> to <span class="math notranslate nohighlight">\(n\)</span>. In the simplest case those
+are Cartesian components (<span class="math notranslate nohighlight">\(i = x, y, z\)</span>). However, in some cases those
+can have different meaning.</p>
+</li>
+<li><p>Each entity has a well defined position in the real space.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[X_{\mu; \alpha}\]</div>
+</div>
+<p>As each entity is associated with a site, its position is simply the
+position of tha site.</p>
+</li>
+</ul>
+</section>
+<section id="extra-variables">
+<h2>&quot;Extra&quot; variables<a class="headerlink" href="#extra-variables" title="Link to this heading">¶</a></h2>
+<p>Some terms of the Hamiltonian contain special variables, that may not depend on
+the site indices. For example, strain tensor in <a class="reference internal" href="../spinham-zoo/mcphase.html#zoo-mcphase"><span class="std std-ref">McPhase</span></a> or an external
+effect, as a magnetic flux density. Such variables</p>
+<p>Those terms include variables, that are expected to be described as entities,
+but are either associated with a crystal as a whole or are uniform for all sites.
+Therefore, the association with a particular site is not natural for such
+variables. To account for such variables introduce a special value for
+the indices <span class="math notranslate nohighlight">\((\mu, \alpha)\)</span>, for example <span class="math notranslate nohighlight">\((\mu, \alpha) \in \{\_1, \_2, \_3, \dots\}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The form of the values — &quot;_&lt;integer&gt;&quot; — is a suggestion. The actual label
+can be decided during the design stage for the details of the format.</p>
+</div>
+<p>Then, such variables can be formally written as entities as well. The indication
+of how those terms shall be interpreted shall be designed as a detail of the
+format. The importance for the generalized algebraic form is the possibility of
+having a special index value.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Consider a Zeeman term (let <span class="math notranslate nohighlight">\(g\mu_B = 1\)</span>)
+<span class="math notranslate nohighlight">\(\sum_{\mu, \alpha, i} B^{i} S_{\mu; \alpha}^{i}\)</span>. A spin operator/vector
+is an entity, that have a clear association with a site
+<span class="math notranslate nohighlight">\(X^{i}_{\mu; \alpha} \equiv S^i_{\mu; \alpha}\)</span>. However, the magnetic
+flux density <span class="math notranslate nohighlight">\(B^{i}\)</span> is typically uniform for all sites and therefore
+does not have a clear association with a particular site. Using a concept of
+special values for the site indices, one can write
+<span class="math notranslate nohighlight">\(X^i_{\_1} \equiv B^i\)</span>. Then the Zeeman term can be written as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\sum_{\mu_1, \alpha_1, \mu_2, \alpha_2, i}
+X^i_{\mu_1, \alpha_1} \cdot X^{i}_{\mu_2; \alpha_2}\]</div>
+</div>
+<p>In such a sum one understands that the file would include only blocks with
+<span class="math notranslate nohighlight">\((\mu_1, \alpha_1) = \_1\)</span>, but the algebraic form is written in
+such a way that <span class="math notranslate nohighlight">\(X^i_{\_1}\)</span> and <span class="math notranslate nohighlight">\(X^{i}_{\mu; \alpha}\)</span> are
+treated on equal footing.</p>
+</div>
+<p>In the following, the meaning of the word &quot;sites&quot; is extended with such special
+value of its indices.</p>
+</section>
+<section id="interaction-parameters">
+<h2>Interaction parameters<a class="headerlink" href="#interaction-parameters" title="Link to this heading">¶</a></h2>
+<p>Then, an interaction between sites is described by the interaction parameters.
+Label such an interaction parameter with the capital letter <span class="math notranslate nohighlight">\(V\)</span>. Each
+interaction parameter connects one or more entities. As with entities, the
+interpretation of the parameter <span class="math notranslate nohighlight">\(V\)</span> depends on the term of the
+Hamiltonian, which it enters. However, there are two common properties</p>
+<ul>
+<li><p>Each interaction parameter has as many independent dimensions as the number of
+components of the entities that it connects. For example, an interaction
+parameter</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[V^{i_1, i_2, \ldots, i_k}\]</div>
+</div>
+<p>connects <span class="math notranslate nohighlight">\(k\)</span> entities.</p>
+</li>
+<li><p>Each interaction parameter depends on as many pairs of position indices
+and/or labels as the number of entities it connects.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[V_{\mu_1, \mu_2, \ldots, \mu_m; \alpha_1, \alpha_2, \ldots, \alpha_k}\]</div>
+</div>
+</li>
+</ul>
+</section>
+<section id="terms-of-the-hamiltonian">
+<h2>Terms of the Hamiltonian<a class="headerlink" href="#terms-of-the-hamiltonian" title="Link to this heading">¶</a></h2>
+<p>The Hamiltonian itself is constructed with the following properties in mind</p>
+<ul class="simple">
+<li><p>Terms of the Hamiltonian can involve an arbitrary amount of entities.</p></li>
+<li><p>Each combination of components of the entities can have a unique
+interaction parameter associated with it.</p></li>
+</ul>
+<p>Consider an arbitrary term of the Hamiltonian. Let it involve <span class="math notranslate nohighlight">\(k\)</span> sites
+(distinct or not)</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[(\mu_1; \alpha_1), (\mu_2; \alpha_2), \ldots, (\mu_m; \alpha_m)\]</div>
+</div>
+<p>Each site has an entity associated with it</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[X_{\mu_1; \alpha_1}^{i_1},
+X_{\mu_2; \alpha_2}^{i_2},
+\ldots,
+X_{\mu_k; \alpha_k}^{i_k}\]</div>
+</div>
+<p>Then, the interaction parameter that connects those entities is labeled as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[V_{\mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{i_1, \ldots, i_k}\]</div>
+</div>
+<p>Then the term of the Hamiltonian that involves those entities is written as</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{H}_k
+=
+C_k
+\sum_{\substack{\mu_1, \ldots, \mu_k, \\ \alpha_1, \ldots, \alpha_k, \\ i_1, \ldots, i_k}}
+V_{\mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{i_1, \ldots, i_k}
+\cdot
+X_{\mu_1; \alpha_1}^{i_1}
+\cdot
+X_{\mu_2; \alpha_2}^{i_2}
+\cdot
+\ldots
+\cdot
+X_{\mu_k; \alpha_k}^{i_k}\end{split}\]</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The constants of the form <span class="math notranslate nohighlight">\(C_{k}\)</span> are introduced to account for
+different conventions (see <a class="extlink-issue reference external" href="https://github.com/spinham/spinham-format/issues/2">issue #2</a>).</p>
+</div>
+<p>The Hamiltonian can include multiple terms of the same form, with distinct
+physical origin.</p>
+</section>
+<section id="the-hamiltonian">
+<h2>The Hamiltonian<a class="headerlink" href="#the-hamiltonian" title="Link to this heading">¶</a></h2>
+<p>Finally, everything is ready to write the Hamiltonian, which simply a sum over
+all possible terms of the form from above</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{H}
+=
+\sum_{k=1}^{\infty}
+\mathcal{H}_k
+=
+\sum_{k=1}^{\infty}
+C_k
+\sum_{\substack{\mu_1, \ldots, \mu_k, \\ \alpha_1, \ldots, \alpha_k, \\ i_1, \ldots, i_k}}
+V_{\mu_1, \ldots, \mu_k; \alpha_1, \ldots, \alpha_k}^{i_1, \ldots, i_k}
+\cdot
+X_{\mu_1; \alpha_1}^{i_1}
+\cdot
+X_{\mu_2; \alpha_2}^{i_2}
+\cdot
+\ldots
+\cdot
+X_{\mu_k; \alpha_k}^{i_k}\end{split}\]</div>
+</div>
+</section>
+<section id="mapping-to-the-general-form">
+<h2>Mapping to the general form<a class="headerlink" href="#mapping-to-the-general-form" title="Link to this heading">¶</a></h2>
+<p>Now, consider the terms of the Hamiltonian that are present in the
+<a class="reference internal" href="../spinham-zoo/index.html#zoo"><span class="std std-ref">&quot;zoo&quot;</span></a> and map each one of them to the general form above.</p>
+<p>The pages below discuss the mapping of each term in detail.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bilinear-exchange.html">Bilinear exchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biquadratic-exchange.html">Biquadratic exchange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystal-field.html">Crystal field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dipole-dipole.html">Magnetic dipole-dipole interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elastic-energy.html">Elastic energy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exchange-striction.html">Exchange striction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="magneto-elastic.html">Magneto-elastic interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="on-site-k2.html">On-site anisotropy (k = 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="on-site-k4.html">On-site anisotropy (k = 4)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadruplet-interaction.html">Quadruplet interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="two-ion-crystal-field.html">Two-ion crystal field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zeeman.html">Zeeman interaction</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="on-site-k.html">On-site anisotropy (k)</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="bilinear-exchange.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Bilinear exchange</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../generalization-3/on-site-k.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">On-site anisotropy (k)</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Attempt at generalization (#4)</a><ul>
+<li><a class="reference internal" href="#crystal-structure">(Crystal) structure</a></li>
+<li><a class="reference internal" href="#magnetic-sites">(Magnetic) sites</a></li>
+<li><a class="reference internal" href="#extra-variables">&quot;Extra&quot; variables</a></li>
+<li><a class="reference internal" href="#interaction-parameters">Interaction parameters</a></li>
+<li><a class="reference internal" href="#terms-of-the-hamiltonian">Terms of the Hamiltonian</a></li>
+<li><a class="reference internal" href="#the-hamiltonian">The Hamiltonian</a></li>
+<li><a class="reference internal" href="#mapping-to-the-general-form">Mapping to the general form</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>
