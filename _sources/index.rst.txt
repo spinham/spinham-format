@@ -21,6 +21,7 @@ Spin Hamiltonian format
     generalization-2/index
     generalization-3/index
     generalization-4/index
+    generalization-5/index
 
 Workflow
 ========
@@ -45,4 +46,3 @@ for the end of the design stage (an open issue in this repository with a
 notification to everyone) can be made by any member and if no new FDP appear
 after XX>7 days after the call, then the work will move to the implementation
 stage.
-
