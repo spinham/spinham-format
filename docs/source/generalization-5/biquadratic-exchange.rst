@@ -1,0 +1,81 @@
+.. _mapping-5_biquadratic-exchange:
+
+********************
+Biquadratic exchange
+********************
+
+Biquadratic exchange involves four entities. Therefore, it can be expressed as a
+:math:`\mathcal{H}_4` term.
+
+
+.. math::
+
+    \mathcal{H}_4
+    =
+    C_4
+    \sum_{\substack{\mu_1, \mu_2, \mu_3, \mu_4,\\ \alpha_1, \alpha_2, \alpha_3, \alpha_4,\\ i_1, i_2, i_3, i_4}}
+    V_{\mu_1, \mu_2, \mu_3, \mu_4; \alpha_1, \alpha_2, \alpha_3, \alpha_4}^{i_1, i_2, i_3, i_4}
+    X_{\mu_1; \alpha_1}^{i_1}
+    X_{\mu_2; \alpha_2}^{i_2}
+    X_{\mu_3; \alpha_3}^{i_3}
+    X_{\mu_4; \alpha_4}^{i_4}
+
+The summary of the mapping for each code is given in the table below.
+
+.. list-table::
+    :header-rows: 1
+    :stub-columns: 1
+
+    *   - Code
+        - :ref:`zoo_spinw`
+        - :ref:`zoo_spirit`
+    *   - :math:`\mathcal{H}`
+        - .. math::
+            \mathcal{H}
+            =
+            \sum_{i \neq j}
+            B (\mathbf{S}_i \cdot \mathbf{S}_j)^2
+
+        - .. math::
+            \mathcal{H}_{\rm quad}
+            =
+            - \sum_{ij} K_{ij} (\vec{n}_i \cdot \vec{n}_j)^2
+    *   - Renaming of indices
+        - :math:`i \rightarrow (\mu_1, \alpha_1)`, :math:`j \rightarrow (\mu_2, \alpha_2)`
+        - :math:`i \rightarrow (\mu_1, \alpha_1)`, :math:`j \rightarrow (\mu_2, \alpha_2)`
+    *   - :math:`C_4`
+        - 1
+        - -1
+    *   - :math:`V_{\mu_1, \mu_2, \mu_3, \mu_4; \alpha_1, \alpha_2, \alpha_3, \alpha_4}^{i_1, i_2, i_3, i_4}`
+        - :math:`B\cdot \delta_{\mu_1, \mu_2} \delta_{\mu_3,\mu_4} \delta_{\alpha_1, \alpha_2} \delta_{\alpha_3,\alpha_4}` if :math:`(i_1, i_2, i_3, i_4) \in \mathcal{K}` and 0 otherwise.
+        - :math:`K_{\mu_1, \mu_2; \alpha_1, \alpha_2}` if :math:`(i_1, i_2, i_3, i_4) \in \mathcal{K}` and 0 otherwise.
+    *   - :math:`X_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`S_{\mu_1; \alpha_1}^{i_1}`
+        - :math:`n_{\mu_1; \alpha_1}^{i_1}`
+    *   - :math:`X_{\mu_2; \alpha_2}^{i_2}`
+        - :math:`S_{\mu_2; \alpha_2}^{i_2}`
+        - :math:`n_{\mu_2; \alpha_2}^{i_2}`
+    *   - :math:`X_{\mu_3; \alpha_3}^{i_3}`
+        - :math:`S_{\mu_3; \alpha_3}^{i_3}`
+        - :math:`n_{\mu_3; \alpha_3}^{i_3}`
+    *   - :math:`X_{\mu_4; \alpha_4}^{i_4}`
+        - :math:`S_{\mu_4; \alpha_4}^{i_4}`
+        - :math:`n_{\mu_4; \alpha_4}^{i_4}`
+
+.. note::
+
+    -   :math:`\mathcal{K} = \{(x,x,x,x), (y,y,y,y), (z,z,z,z), (x,y,x,y), (x,z,x,z), (y,z,y,z), (y,x,y,x), (z,x,z,x), (z,y,z,y)\}`
+    -   :ref:`zoo_spirit`
+
+        Spirit includes more general Hamiltonian that is called "quadruplet interaction"
+
+        .. math::
+
+            \mathcal{H}_{\rm quad}
+            =
+            - \sum_{ijkl} K_{ijkl} (\vec{n}_i \cdot \vec{n}_j)(\vec{n}_k \cdot \vec{n}_l)
+
+        in the case :math:`i = k` and :math:`j = l` (or, equivalently,
+        :math:`i = l` and :math:`j = k`) this interaction describe a biquadratic
+        exchange. Other cases are considered in the page 
+        :ref:`mapping_quadruplet`. 
