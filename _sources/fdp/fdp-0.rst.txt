@@ -8,7 +8,7 @@ FDP 0 — How to write an FDP
 =========== ======================================
 **Author**  Andrey Rybakov (rybakov.ad@icloud.com)
 **Created** 04.12.2025
-**Status**  Draft
+**Status**  Accepted
 =========== ======================================
 
 What is a FDP?
@@ -157,3 +157,8 @@ Replaced
 --------
 
 The FDP becomes ``Replaced`` if a new FDP, that supersedes it, is ``Accepted``.
+
+Discussion
+==========
+
+* :issue:`9`
