@@ -4,13 +4,20 @@
 Design principles
 *****************
 
-Proposed
+Accepted
 ========
 
 .. toctree::
     :maxdepth: 1
 
     fdp-0
+
+Proposed
+========
+
+.. toctree::
+    :maxdepth: 1
+
 
 
 Template
