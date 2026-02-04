@@ -216,7 +216,7 @@ Finally, the Hamiltonian is simply written as a sum of all possible terms
     the parameter in a file. Said that, the general form implies three things
 
     - The cell (lattice vectors :math:`\mathbf{a}_1, \ldots, \mathbf{a}_d`) and 
-      a set of sites in the cell (positions & labels) are defined file-vide. 
+      a set of sites in the cell (positions & labels) are defined file-wide. 
     
     - The set of values for the cell and site indices (:math:`\mu_1, \ldots,
       \mu_k, \alpha_1, \ldots, \alpha_k`) are defined for each individual
